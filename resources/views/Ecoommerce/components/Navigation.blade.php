@@ -6,19 +6,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item @if(Route::currentRouteName() === 'home') active @endif">
             <a class="nav-link" href="{{route('home')}}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item @if(Route::currentRouteName() === 'products') active @endif">
             <a class="nav-link" href="{{route('products')}}">Products</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item @if(Route::currentRouteName() === 'about') active @endif">
             <a class="nav-link" href="{{route('about')}}">About Us</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item @if(Route::currentRouteName() === 'contact') active @endif">
             <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">Login</a>
           </li>
         </ul>
       </div>
