@@ -40,6 +40,22 @@
             </div>
         </div>
     </div>
+    <div class="cartas">
+        <div class="row">
+          <div class="col">
+            <x-adminlte-small-box title="N" text="Ventas Facturadas" icon="fas fa-handshake text-dark"
+                theme="success" url="#" url-text="Ver ventas facturadas"/>
+          </div>
+          <div class="col order-12">
+            <x-adminlte-small-box title="N" text="Cantidad Productos" icon="fas fa-boxes text-dark"
+                theme="danger" url="#" url-text="Ver registro productos"/>
+          </div>
+          <div class="col order-1">
+            <x-adminlte-small-box title="N" text="Cantidad Clientes" icon="fas fa-address-book text-dark"
+                theme="info" url="#" url-text="Ver registro clientes"/>
+          </div>
+        </div>
+    </div>
 </div>
 @stop
 
