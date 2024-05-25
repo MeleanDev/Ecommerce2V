@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Empresa;
+use App\Http\Controllers\Controller;
+use App\Models\SuscritoWeb;
 use Illuminate\Http\Request;
 
-class EmpresaController extends Controller
+class SuscritoWebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class EmpresaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Empresa $empresa)
+    public function show(SuscritoWeb $suscritoWeb)
     {
         //
     }
@@ -42,7 +43,7 @@ class EmpresaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Empresa $empresa)
+    public function edit(SuscritoWeb $suscritoWeb)
     {
         //
     }
@@ -50,7 +51,7 @@ class EmpresaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(Request $request, SuscritoWeb $suscritoWeb)
     {
         //
     }
@@ -58,7 +59,7 @@ class EmpresaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empresa $empresa)
+    public function destroy(SuscritoWeb $suscritoWeb)
     {
         //
     }
