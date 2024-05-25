@@ -307,7 +307,7 @@ return [
         ],
         [
             'text' => 'Empresa',
-            'url' => '',
+            'route' => 'empresa',
             'icon' => 'fas fa-briefcase',
         ],
         [
@@ -317,12 +317,12 @@ return [
         ],
         [
             'text' => 'Clientes',
-            'url' => '',
+            'route' => 'cliente',
             'icon' => 'fas fa-address-book',
         ],
         [
             'text' => 'SuscritoWeb',
-            'url' => '',
+            'route' => 'suscritoWeb',
             'icon' => 'fas fa-bullhorn',
         ],
         [
@@ -331,11 +331,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Categorias',
-                    'url' => '',
+                    'route' => 'categoria',
                 ],
                 [
                     'text' => 'Productos',
-                    'url' => '',
+                    'route' => 'producto',
                 ],
             ],
         ],

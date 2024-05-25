@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
 
         // Empresa
         Route::controller(EmpresaController::class)->group(function () {
-            Route::get('Empresa', 'index');
+            Route::get('Empresa', 'index')->name('empresa');
         });
 
         // General Venta
@@ -26,23 +26,23 @@ Route::middleware('auth')->group(function () {
 
         // Clientes
         Route::controller(ClienteController::class)->group(function () {
-            Route::get('Clientes', 'index');
+            Route::get('Clientes', 'index')->name('cliente');
         });
 
         // SuscritoWeb
         Route::controller(SuscritoWebController::class)->group(function () {
-            Route::get('SuscritosWeb', 'index');
+            Route::get('SuscritosWeb', 'index')->name('suscritoWeb');
         });
 
         // Stock
             // Categorias
             Route::controller(CategoriaController::class)->group(function () {
-                Route::get('Categorias', 'index');
+                Route::get('Categorias', 'index')->name('categoria');
             });
 
             // Productos
             Route::controller(ProductoController::class)->group(function () {
-                Route::get('Productos', 'index');
+                Route::get('Productos', 'index')->name('producto');
             });
 
         // Perfil 
