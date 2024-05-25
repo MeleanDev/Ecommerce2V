@@ -11,6 +11,19 @@ Route::middleware('auth')->group(function () {
             return view('dashboard');
         })->name('dashboard');
 
+        // Empresa
+        
+        // General Venta
+
+        // Clientes
+
+        // SuscritoWeb
+
+        // Stock
+            // Categorias
+
+            // Productos
+
         // Perfil 
         Route::get('Perfil', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('Perfil', [ProfileController::class, 'update'])->name('profile.update');
