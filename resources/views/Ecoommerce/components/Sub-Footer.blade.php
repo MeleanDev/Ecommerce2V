@@ -3,9 +3,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="copyright-text">
-            <p>Copyright &copy; 2019 Company Name 
+            <p>Copyright &copy; 2024
               
-              - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+              - Diseñado y Desarrollado por: <a rel="nofollow" href="https://github.com/MeleanDev">MeleanDev</a></p>
           </div>
         </div>
       </div>
