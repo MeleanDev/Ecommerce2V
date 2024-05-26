@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
         // Empresa
         Route::controller(EmpresaController::class)->group(function () {
             Route::get('Empresa', 'index')->name('empresa');
+            Route::post('Empresa/Datos', 'datos')->name('empresa.datos');
         });
 
         // General Venta

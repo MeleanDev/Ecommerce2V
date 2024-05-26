@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Empresa;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,6 +21,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('12121212')
+        ]);
+
+        Empresa::create([
+            'nombreEmpresa' => '',
+            'razonSocial' => '',
+            'rif' => '',
+            'correo' => '',
+            'telefono' => '',
+            'direccion' => '',
+            'ciudad' => '',
+            'estado' => '',
+            'codigoPostal' => '',
+            'foto' => 'empresa/logo.png',
+
         ]);
     }
 }
