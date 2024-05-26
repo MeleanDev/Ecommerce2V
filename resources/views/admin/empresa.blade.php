@@ -30,18 +30,22 @@
                 <div class="text-center">
                     <input type="file" id="foto" name="foto" accept=".jpg,.png">
                     <small id="foto" class="form-text text-muted">Esta imagen saldra en la fatura y en la Web del Ecoommerce.</small>
+                    @if ($errors->has('foto'))
+                      <span class="error text-danger">{{ $errors->first('foto') }}</span>
+                    @endif
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="nombre">Nombre de la empresa</label>
-
                     <input type="text" name="nombreEmpresa" class="form-control" id="nombre" placeholder="Electronic Art"
                     @if ($datos) 
                     value="{{$datos->nombreEmpresa}}" 
                     @endif 
                     required>
-
                     <small id="nombre" class="form-text text-muted">Esta informacion saldra en la factura y en la Web del Ecoommerce.</small>
+                    @if ($errors->has('nombreEmpresa'))
+                        <span class="error text-danger">{{ $errors->first('nombreEmpresa') }}</span>
+                    @endif
                   </div>
                   <div class="form-group col-md-6">
                     <label for="razonSocial">Razon social</label>
@@ -51,6 +55,9 @@
                     @endif 
                     >
                     <small id="razonSocial" class="form-text text-muted">Esta informacion es opcional.</small>
+                    @if ($errors->has('razonSocial'))
+                      <span class="error text-danger">{{ $errors->first('razonSocial') }}</span>
+                    @endif
                   </div>
                 </div>
                 <div class="form-row">
@@ -62,6 +69,9 @@
                       @endif  
                       required>
                       <small id="cedula" class="form-text text-muted">Esta informacion saldra en la factura.</small>
+                      @if ($errors->has('rif'))
+                        <span class="error text-danger">{{ $errors->first('rif') }}</span>
+                    @endif
                     </div>
                   </div>
                 <div class="form-row">
@@ -73,6 +83,9 @@
                       @endif  
                       required>
                       <small id="correo" class="form-text text-muted">Esta informacion saldra en la factura y en la Web del Ecoommerce.</small>
+                      @if ($errors->has('correo'))
+                        <span class="error text-danger">{{ $errors->first('correo') }}</span>
+                    @endif
                     </div>
                     <div class="form-group col-md-6">
                       <label for="telefono">Telefono</label>
@@ -82,6 +95,9 @@
                       @endif  
                       required>
                       <small id="telefono" class="form-text text-muted">Esta informacion saldra en la factura y en la Web del Ecoommerce.</small>
+                      @if ($errors->has('telefono'))
+                      <span class="error text-danger">{{ $errors->first('telefono') }}</span>
+                    @endif
                     </div>
                   </div>
                 <div class="form-group">
@@ -92,6 +108,9 @@
                   @endif  
                   required>
                   <small id="direccion" class="form-text text-muted">Esta informacion saldra en la factura y en la Web del Ecoommerce.</small>
+                  @if ($errors->has('direccion'))
+                  <span class="error text-danger">{{ $errors->first('direccion') }}</span>
+                    @endif
                 </div>
                 <div class="form-row mb-3">
                   <div class="form-group col-md-6">
@@ -102,6 +121,9 @@
                     @endif  
                     required>
                     <small id="ciudad" class="form-text text-muted">Esta informacion saldra en la factura y en la Web del Ecoommerce.</small>
+                    @if ($errors->has('ciudad'))
+                    <span class="error text-danger">{{ $errors->first('ciudad') }}</span>
+                    @endif
                   </div>
                   <div class="form-group col-md-4">
                     <label for="estado">Estado</label>
@@ -111,6 +133,9 @@
                     @endif  
                     required>
                     <small id="estado" class="form-text text-muted">Esta informacion saldra en la factura.</small>
+                    @if ($errors->has('estado'))
+                    <span class="error text-danger">{{ $errors->first('estado') }}</span>
+                    @endif
                   </div>
                   <div class="form-group col-md-2">
                     <label for="codigopostal">Codigo Postal</label>
@@ -120,6 +145,9 @@
                     @endif  
                     required>
                     <small id="codigoPostal" class="form-text text-muted">Esta informacion saldra en la factura.</small>
+                    @if ($errors->has('codigoPostal'))
+                    <span class="error text-danger">{{ $errors->first('codigoPostal') }}</span>
+                    @endif
                   </div>
                 </div>
                 <div class="botones text-center">
