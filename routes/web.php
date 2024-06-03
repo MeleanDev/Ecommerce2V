@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
     })->name('contact');
 
     Route::get('/Products', function () {
-        return view('Ecoommerce.products');
+        return view('Ecoommerce.categoria');
     })->name('products');
 
-    Route::get('/Products/{product}', function () {
+    Route::get('/Products/1', function () {
         return view('Ecoommerce.products');
     })->name('products.single');
 

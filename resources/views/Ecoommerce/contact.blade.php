@@ -11,7 +11,7 @@
                 <div class="col-md-12">
                 <div class="section-heading">
                     <div class="line-dec"></div>
-                    <h1>Contact Us</h1>
+                    <h1>Contáctenos</h1>
                 </div>
                 </div>
                 <div class="col-md-6">
@@ -33,32 +33,32 @@
                         <div class="row">
                         <div class="col-md-6">
                             <fieldset>
-                            <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Nombre y apellido..." required="">
                             </fieldset>
                         </div>
                         <div class="col-md-6">
                             <fieldset>
-                            <input name="email" type="text" class="form-control" id="email" placeholder="Your email..." required="">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="Correo electronico..." required="">
                             </fieldset>
                         </div>
                         <div class="col-md-12">
                             <fieldset>
-                            <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="">
+                            <input name="subject" type="text" class="form-control" id="subject" placeholder="Razon..." required="">
                             </fieldset>
                         </div>
                         <div class="col-md-12">
                             <fieldset>
-                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tu mensaje..." required=""></textarea>
                             </fieldset>
                         </div>
                         <div class="col-md-12">
                             <fieldset>
-                            <button type="submit" id="form-submit" class="button">Send Message</button>
+                            <button type="submit" id="form-submit" class="button">Enviar Mensaje</button>
                             </fieldset>
                         </div>
                         <div class="col-md-12">
                             <div class="share">
-                            <h6>You can also keep in touch on: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+                                <h6>Encuéntranos en: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-instagram"></i></a></span></h6>
                             </div>
                         </div>
                         </div>

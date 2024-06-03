@@ -1,0 +1,1 @@
+<img src="{{ asset('build/Ecoommerce/assets/images/header-logo.png') }}" alt="">

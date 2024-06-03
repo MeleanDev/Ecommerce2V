@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
+          <span>Mensaje de Bienvenida aqui!!</span>
         </div>
       </div>
     </div>

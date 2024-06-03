@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('suscrito_webs', function (Blueprint $table) {
             $table->id();
+            $table->string('correo')->unique();
             $table->timestamps();
         });
     }

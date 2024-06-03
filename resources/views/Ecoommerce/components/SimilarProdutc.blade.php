@@ -4,7 +4,7 @@
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>You May Also Like</h1>
+            <h1>Misma Categoria</h1>
           </div>
         </div>
         <div class="col-md-12">

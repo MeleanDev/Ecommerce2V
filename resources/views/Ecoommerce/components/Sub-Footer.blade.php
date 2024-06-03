@@ -5,7 +5,7 @@
           <div class="copyright-text">
             <p>Copyright &copy; 2024
               
-              - Diseñado y Desarrollado por: <a rel="nofollow" href="https://github.com/MeleanDev">MeleanDev</a></p>
+              - Diseñado y Desarrollado por: <a rel="nofollow" @include('Ecoommerce.components.Desarrollador')>MeleanDev</a></p>
           </div>
         </div>
       </div>

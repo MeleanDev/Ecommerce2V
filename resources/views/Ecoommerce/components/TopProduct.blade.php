@@ -4,7 +4,7 @@
         <div class="col-md-12">
         <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Featured Items</h1>
+            <h1>Productos Destacados</h1>
         </div>
         </div>
         <div class="col-md-12">

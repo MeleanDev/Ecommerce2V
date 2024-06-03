@@ -329,6 +329,24 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'EcommerceWeb',
+            'icon' => 'fas fa-boxes',
+            'submenu' => [
+                [
+                    'text' => 'Inicio',
+                    'url' => 'categoria',
+                ],
+                [
+                    'text' => 'Productos',
+                    'url' => 'producto',
+                ],
+                [
+                    'text' => 'Productos',
+                    'url' => 'producto',
+                ],
+            ],
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
