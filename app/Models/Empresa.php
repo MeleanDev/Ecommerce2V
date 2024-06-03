@@ -24,6 +24,9 @@ class Empresa extends Model
         'ciudad',
         'estado',
         'codigoPostal',
+        'google',
+        'facebook',
+        'instagram',
         'foto'
     ];
 }

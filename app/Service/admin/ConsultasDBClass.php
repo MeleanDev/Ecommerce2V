@@ -20,7 +20,10 @@ class ConsultasDBClass{
         $empresa->ciudad = $datos[6];
         $empresa->estado = $datos[7];
         $empresa->codigoPostal = $datos[8];
-        $empresa->foto = $retVale = ($datos[9] === '') ? $empresa->foto : $datos[9];
+        $empresa->google = $datos[9];
+        $empresa->facebook = $datos[10];
+        $empresa->instagram = $datos[11];
+        $empresa->foto = $retVale = ($datos[12] === '') ? $empresa->foto : $datos[12];
         $empresa->save();
     }
 

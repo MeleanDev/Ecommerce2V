@@ -23,7 +23,10 @@ class EmpresaClass{
         $DListos[6] = $datos->ciudad;
         $DListos[7] = $datos->estado;
         $DListos[8] = $datos->codigoPostal;
-        $DListos[9] = '';
+        $DListos[9] = $datos->google;
+        $DListos[10] = $datos->facebook;
+        $DListos[11] = $datos->instagram;
+        $DListos[12] = ''; 
 
         if ($datos->hasFile('foto')) {
             $fot = $this->DB->obtenerDatosEmpresa();
@@ -35,7 +38,7 @@ class EmpresaClass{
             $filename = time().'.'.$datos->foto->extension();
             $datos->foto->move(public_path('empresa'), $filename);
 
-            $DListos[9] = 'empresa/'.$filename;
+            $DListos[12] = 'empresa/'.$filename;
         }
         $this->DB->registroDataEmpresa($DListos);
     }

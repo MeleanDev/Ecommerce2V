@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('ciudad');
             $table->string('estado');
             $table->string('codigoPostal');
+            $table->text('google');
+            $table->text('facebook');
+            $table->text('instagram');
             $table->timestamps();
         });
     }

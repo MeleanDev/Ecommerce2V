@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
             'ciudad' => '',
             'estado' => '',
             'codigoPostal' => '',
+            'google' => '',
+            'facebook' => '',
+            'instagram' => '',
             'foto' => 'empresa/logo.png',
 
         ]);

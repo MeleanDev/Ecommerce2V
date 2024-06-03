@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\admin\CategoriaController;
-use App\Http\Controllers\admin\ClienteController;
 use App\Http\Controllers\admin\EmpresaController;
 use App\Http\Controllers\admin\ProductoController;
 use App\Http\Controllers\admin\SuscritoWebController;
@@ -22,20 +21,13 @@ Route::middleware('auth')->group(function () {
             Route::post('Empresa/Datos', 'datos')->name('empresa.datos');
         });
 
-        // General Venta
-
-
-        // Clientes
-        Route::controller(ClienteController::class)->group(function () {
-            Route::get('Clientes', 'index')->name('cliente');
-        });
-
         // SuscritoWeb
         Route::controller(SuscritoWebController::class)->group(function () {
             Route::get('SuscritosWeb', 'index')->name('suscritoWeb');
         });
 
         // Stock
+        Route::prefix('Stock')->group(function () {
             // Categorias
             Route::controller(CategoriaController::class)->group(function () {
                 Route::get('Categorias', 'index')->name('categoria');
@@ -45,10 +37,11 @@ Route::middleware('auth')->group(function () {
             Route::controller(ProductoController::class)->group(function () {
                 Route::get('Productos', 'index')->name('producto');
             });
+        });
 
         // Perfil 
         Route::get('Perfil', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('Perfil', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('Perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        // Route::delete('Perfil', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 });

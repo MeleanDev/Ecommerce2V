@@ -311,16 +311,6 @@ return [
             'icon' => 'fas fa-briefcase',
         ],
         [
-            'text' => 'General Venta',
-            'url' => '',
-            'icon' => 'fas fa-handshake',
-        ],
-        [
-            'text' => 'Clientes',
-            'route' => 'cliente',
-            'icon' => 'fas fa-address-book',
-        ],
-        [
             'text' => 'SuscritoWeb',
             'route' => 'suscritoWeb',
             'icon' => 'fas fa-bullhorn',

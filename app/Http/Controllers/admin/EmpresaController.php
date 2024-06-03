@@ -21,6 +21,6 @@ class EmpresaController extends Controller
 
     public function datos(EmpresaRequest $datos){
         $this->EmpresaClass->ingresarDatos($datos);
-        return redirect()->route('empresa');
+        return redirect()->route('empresa')->with('correctamente','Datos Actualizados');
     }
 }

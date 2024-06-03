@@ -31,6 +31,9 @@ class EmpresaRequest extends FormRequest
             'ciudad' => ['required', 'string', 'min:4','max:255'],
             'estado' => ['required', 'string', 'min:4','max:255'],
             'codigoPostal' => ['required', 'string', 'min:3','max:10'],
+            'google' => ['required', 'string'],
+            'facebook' => ['required', 'string'],
+            'instagram' => ['required', 'string'],
             'foto' => [
                 'image', 
                 'mimes:jpeg,png',
