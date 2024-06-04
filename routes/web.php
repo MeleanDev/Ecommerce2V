@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('Contacto', 'contacto')->name('contacto');
         Route::get('Categorias', 'categorias')->name('categorias');
         Route::get('Productos', 'productos')->name('productos');
-        Route::post('suscripcion', 'suscripcion')->name('suscripcion');
+        Route::post('suscripcion', 'SuscripcionWeb')->name('suscripcion');
     });
 
 require __DIR__.'/admin.php';

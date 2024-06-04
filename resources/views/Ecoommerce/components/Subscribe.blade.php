@@ -11,14 +11,12 @@
           <div class="main-content">
             <p>Sucribete y recibe notificaciones sobre nuevos productos y/o descuentos especiales.</p>
             <div class="container">
-              <form id="subscribe" action="" method="get">
+              <form id="subscribe" action="{{route('suscripcion')}}" method="post">
+                @csrf
                 <div class="row">
                   <div class="col-md-7">
                     <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" 
-                      onfocus="if(this.value == 'Correo Electronico...') { this.value = ''; }" 
-                      onBlur="if(this.value == '') { this.value = 'Correo Electronico...';}"
-                      value="Correo Electronico..." required="">
+                      <input name="correo" type="email" class="form-control" id="email" placeholder="Correo electronico" required>
                     </fieldset>
                   </div>
                   <div class="col-md-5">

@@ -20,8 +20,8 @@
         <div class="col-md-12">
           <div class="social-icons">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="{{$empresaD->facebook}}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{$empresaD->instagram}}"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>

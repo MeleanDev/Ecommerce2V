@@ -21,8 +21,8 @@ class EcommerceWebClass
         
     }
 
-    public function suscripcion(){
-        
+    public function suscripcion($correo){
+        $this->DB->suscripcionWeb($correo);
     }
 
     public function DatosEmpresa(){

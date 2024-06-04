@@ -331,19 +331,15 @@ return [
         ],
         [
             'text' => 'EcommerceWeb',
-            'icon' => 'fas fa-boxes',
+            'icon' => 'fas fa-sitemap',
             'submenu' => [
                 [
                     'text' => 'Inicio',
                     'url' => 'categoria',
                 ],
                 [
-                    'text' => 'Productos',
-                    'url' => 'producto',
-                ],
-                [
-                    'text' => 'Productos',
-                    'url' => 'producto',
+                    'text' => 'Quienes Somos',
+                    'url' => 'categoria',
                 ],
             ],
         ],

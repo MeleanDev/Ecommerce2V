@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class SuscritoWeb extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
+     */
+    protected $fillable = ['correo'];
 }

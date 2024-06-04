@@ -39,9 +39,9 @@ class EcommerceWebController extends Controller{
         return view('Ecoommerce.contacto', compact('empresaD'));
     }
 
-    public function SuscripcionWeb(Request $correo){
-
-        return back();
+    public function SuscripcionWeb(Request $corre){
+        $this->ecommerce->suscripcion($corre);
+        return redirect()->route('inicio');
     }
 
 }
