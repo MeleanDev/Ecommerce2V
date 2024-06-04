@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span>Mensaje de Bienvenida aqui!!</span>
+          <span>Rif/Cedula: {{$empresaD->rif}} - {{$empresaD->nombreEmpresa}} - Telf: {{$empresaD->telefono}}</span>
         </div>
       </div>
     </div>

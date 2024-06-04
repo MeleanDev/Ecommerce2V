@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                 <div class="caption">
-                    <h2>Poner Mensaje aqui</h2>
+                    <h2>{{$empresaD->nombreEmpresa}}</h2>
                     <div class="line-dec"></div>
                     <p>Poner Mensaje AA.</p>
                     <div class="main-button">
