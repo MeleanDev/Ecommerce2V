@@ -25,7 +25,7 @@
                     <div class="item new col-md-4">
                         <a href="{{$item->nombre}}">
                         <div class="featured-item">
-                            <img src="{{ asset($item->foto) }}" alt="{{$item->nombre}}">
+                            <img src="{{ asset($item->foto) }}" height="200" alt="{{$item->nombre}}">
                             <h4 class="h4 text-center">{{$item->nombre}}</h4>
                         </div>
                         </a>
@@ -36,16 +36,11 @@
         
             <div class="page-navigation">
                 <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                    <ul>
-                        <li class="current-page"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{$categorias->links('pagination::Bootstrap-4')}}
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             <!-- Featred Page Ends Here -->

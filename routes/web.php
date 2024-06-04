@@ -1,29 +1,17 @@
 <?php
 
+use App\Http\Controllers\EcommerceWebController;
 use Illuminate\Support\Facades\Route;
 
 // Ecoommerce
-    Route::get('/', function () {
-        return view('Ecoommerce.inicio');
-    })->name('inicio');
-
-    Route::get('Quienes-Somos', function () {
-        return view('Ecoommerce.quienesSomos');
-    })->name('quienesSomos');
-
-    Route::get('Contacto', function () {
-        return view('Ecoommerce.contacto');
-    })->name('contacto');
-
-    Route::get('Categorias', function () {
-        return view('Ecoommerce.categoria');
-    })->name('categorias');
-
-    Route::get('Productos', function () {
-        return view('Ecoommerce.productos');
-    })->name('productos');
-
-
+    Route::controller(EcommerceWebController::class)->group(function () {
+        Route::get('/', 'inicio')->name('inicio');
+        Route::get('Quienes-Somos', 'quienesSomos')->name('quienesSomos');
+        Route::get('Contacto', 'contacto')->name('contacto');
+        Route::get('Categorias', 'categorias')->name('categorias');
+        Route::get('Productos', 'productos')->name('productos');
+        Route::post('suscripcion', 'suscripcion')->name('suscripcion');
+    });
 
 require __DIR__.'/admin.php';
 require __DIR__.'/auth.php';

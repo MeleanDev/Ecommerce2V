@@ -51,5 +51,11 @@ class ConsultasDBClass{
         return $datos;
     }
 
+    // Obetener los datos de las Categorias
+    public function obtenerDatosCategoriasPaginate(){
+        $datos = Categoria::paginate(9);
+        return $datos;
+    }
+
 }
 

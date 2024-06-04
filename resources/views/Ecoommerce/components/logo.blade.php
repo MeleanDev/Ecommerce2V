@@ -1,1 +1,1 @@
-<img src="{{ asset('build/Ecoommerce/assets/images/header-logo.png') }}" alt="">
+<img src="{{ asset($empresaD->foto) }}" alt="{{$empresaD->nombre}}" height="40" width="50">
