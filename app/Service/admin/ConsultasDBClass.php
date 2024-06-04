@@ -9,7 +9,6 @@ use App\Models\SuscritoWeb;
 class ConsultasDBClass{
 // Admin
     // Empresa
-
         // Registramos los datos en la DB
         public function registroDataEmpresa($datos){
             $empresa = $this->obtenerDatosEmpresa();
@@ -56,6 +55,15 @@ class ConsultasDBClass{
         public function obtenerDatosCategoriasPaginate(){
             $datos = Categoria::paginate(9);
             return $datos;
+        }
+    // Suscritos
+        public function suscritosList(){
+            $datos = SuscritoWeb::all();
+            return $datos;
+        }
+
+        public function suscritosBorrarTodo(){
+            SuscritoWeb::truncate();
         }
 
 // Ecommerce

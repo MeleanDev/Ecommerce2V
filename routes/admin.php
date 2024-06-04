@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
         // SuscritoWeb
         Route::controller(SuscritoWebController::class)->group(function () {
             Route::get('SuscritosWeb', 'index')->name('suscritoWeb');
+            Route::get('SuscritosWeb/Lista', 'lista')->name('suscritoWeb.lista');
+            Route::post('SuscritosWeb/Eliminar', 'eliminar')->name('suscritoWeb.eliminar');
         });
 
         // Stock
