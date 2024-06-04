@@ -12,6 +12,7 @@
 
 @section('content_body')
 <div class="container">
+    @include('admin.componts.alert')
     {{-- Titulo --}}
     <div class="tittle h1 text-center">
         <h1>Categorias</h1>
@@ -43,11 +44,13 @@
                         </div>
                         <div class="form-group">
                             <label for="nombre">Nombre Categoria</label>
-                            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de la categoria" required>
+                            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="nombre" placeholder="Nombre categoria" pattern="^[a-zA-Z0-9]+$" title="Solo se permiten números y letras sin espacios" required>
+                            <small id="nombre" class="form-text text-muted">No se permiten espacion.</small>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion Corta de la Categoria</label>
                             <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion">
+                            <small id="descripcion" class="form-text text-muted">descripcion con menos de 255 caracteres.</small>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -72,7 +75,64 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach ($categorias as $item)
+                        <tr>
+                            <td><img src="{{ asset($item->foto) }}" class="rounded mx-auto d-block" width="100" alt="{{$item->nombre}}"></td>
+                            <td class="text-center">{{$item->nombre}}</td>
+                            <td class="text-center">{{$item->descripcion}}</td>
+                            <td class="text-center">{{$item->cantidad}}</td>
+                            <td class="text-center">
+                                <form action="{{route('categoria.eliminar', $item->id)}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn bg-danger" type="submit"><i class='fas fa-trash-alt'></i> Eliminar</button>
+                                </form>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editar{{$item->id}}">
+                                    <i class="fa fa-edit"></i> Editar
+                                </button>
+
+                                    {{-- Modal Editar--}}
+                                    <div class="modal fade" id="editar{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="editar{{$item->id}}" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form action="{{route('categoria.editar', $item->id)}}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    @method('put')
+                                                    <div class="modal-header bg-info">
+                                                        <h5 class="modal-title" id="crea">Editar Categoria {{$item->nombre}}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="{{ asset($item->foto) }}" alt="{{$item->nombre}}" class="rounded mx-auto d-block" width="200">
+                                                        <div class="form-group">
+                                                            <label for="foto">Foto Categoria || Solo Formato (JPG Y PNG)</label>
+                                                            <input type="file" name="foto" class="form-control" accept=".jpg,.png">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="nombre">Nombre Categoria</label>
+                                                            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="nombre" value="{{$item->nombre}}" placeholder="Nombre categoria" pattern="^[a-zA-Z0-9]+$" title="Solo se permiten números y letras sin espacios" required>
+                                                            <small id="nombre" class="form-text text-muted">No se permiten espacion.</small>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="descripcion">Descripcion Corta de la Categoria</label>
+                                                            <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion" value="{{$item->descripcion}}">
+                                                            <small id="descripcion" class="form-text text-muted">descripcion con menos de 255 caracteres.</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                        <button type="submit" class="btn btn-primary"><i class="fas fa-lg fa-save"></i> Guardar Cambios</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 <tfoot class="bg-info">
                     <tr>

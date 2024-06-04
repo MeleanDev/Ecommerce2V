@@ -1,6 +1,6 @@
 @extends('Ecoommerce.layouts.app')
 
-@section('tittle', 'single-product')
+@section('tittle', 'Producto Unico')
 
 @section('content')
     <!-- Page Content -->

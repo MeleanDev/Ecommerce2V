@@ -31,7 +31,9 @@ Route::middleware('auth')->group(function () {
             // Categorias
             Route::controller(CategoriaController::class)->group(function () {
                 Route::get('Categorias', 'index')->name('categoria');
-                Route::post('Categorias/Crear', 'crear')->name('categoria.crear');
+                Route::post('Categorias', 'crear')->name('categoria.crear');
+                Route::put('Categorias/{id}', 'editar')->name('categoria.editar');
+                Route::delete('Categorias/{id}', 'eliminar')->name('categoria.eliminar');
             });
 
             // Productos

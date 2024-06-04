@@ -6,19 +6,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item @if(Route::currentRouteName() === 'home') active @endif">
-            <a class="nav-link" href="{{route('home')}}">Inicio
+          <li class="nav-item @if(Route::currentRouteName() === 'inicio') active @endif">
+            <a class="nav-link" href="{{route('inicio')}}">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item @if(Route::currentRouteName() === 'products') active @endif">
-            <a class="nav-link" href="{{route('products')}}">Productos</a>
+          <li class="nav-item @if(Route::currentRouteName() === 'categorias') active @endif">
+            <a class="nav-link" href="{{route('categorias')}}">Productos</a>
           </li>
-          <li class="nav-item @if(Route::currentRouteName() === 'about') active @endif">
-            <a class="nav-link" href="{{route('about')}}">¿Quienes Somos?</a>
+          <li class="nav-item @if(Route::currentRouteName() === 'quienesSomos') active @endif">
+            <a class="nav-link" href="{{route('quienesSomos')}}">¿Quienes Somos?</a>
           </li>
-          <li class="nav-item @if(Route::currentRouteName() === 'contact') active @endif">
-            <a class="nav-link" href="{{route('contact')}}">Contacto</a>
+          <li class="nav-item @if(Route::currentRouteName() === 'contacto') active @endif">
+            <a class="nav-link" href="{{route('contacto')}}">Contacto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('login')}}">Login</a>

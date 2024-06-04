@@ -2,6 +2,7 @@
 
 namespace App\Service\admin;
 
+use App\Models\Categoria;
 use App\Models\Empresa;
 
 class ConsultasDBClass{
@@ -30,6 +31,23 @@ class ConsultasDBClass{
     // Obetener los datos de la empresa
     public function obtenerDatosEmpresa(){
         $datos = Empresa::first();
+        return $datos;
+    }
+
+// Categoria
+    // Crear Categoria
+    public function crearCategoria($datos, $foto){
+        $categoria = new Categoria();
+        $categoria->nombre = $datos->nombre; 
+        $categoria->descripcion = $datos->descripcion;
+        $categoria->foto = $foto;
+        $categoria->cantidad = 0;
+        $categoria->save();
+    }
+
+    // Obetener los datos de las Categorias
+    public function obtenerDatosCategorias(){
+        $datos = Categoria::all();
         return $datos;
     }
 

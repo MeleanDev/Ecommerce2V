@@ -1,6 +1,6 @@
 @extends('Ecoommerce.layouts.app')
 
-@section('tittle', 'about')
+@section('tittle', 'Quienes Somos')
 
 @section('content')
     <!-- Page Content -->

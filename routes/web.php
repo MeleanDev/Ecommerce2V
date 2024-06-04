@@ -4,24 +4,24 @@ use Illuminate\Support\Facades\Route;
 
 // Ecoommerce
     Route::get('/', function () {
-        return view('Ecoommerce.home');
-    })->name('home');
+        return view('Ecoommerce.inicio');
+    })->name('inicio');
 
-    Route::get('/About', function () {
-        return view('Ecoommerce.about');
-    })->name('about');
+    Route::get('Quienes-Somos', function () {
+        return view('Ecoommerce.quienesSomos');
+    })->name('quienesSomos');
 
-    Route::get('/Contact', function () {
-        return view('Ecoommerce.contact');
-    })->name('contact');
+    Route::get('Contacto', function () {
+        return view('Ecoommerce.contacto');
+    })->name('contacto');
 
-    Route::get('/Products', function () {
+    Route::get('Categorias', function () {
         return view('Ecoommerce.categoria');
-    })->name('products');
+    })->name('categorias');
 
-    Route::get('/Products/1', function () {
-        return view('Ecoommerce.products');
-    })->name('products.single');
+    Route::get('Productos', function () {
+        return view('Ecoommerce.productos');
+    })->name('productos');
 
 
 

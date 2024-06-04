@@ -1,6 +1,6 @@
 @extends('Ecoommerce.layouts.app')
 
-@section('tittle', 'Home')
+@section('tittle', 'Inicio')
 
 @section('content')
     <!-- Page Content -->
@@ -14,7 +14,7 @@
                     <div class="line-dec"></div>
                     <p>Poner Mensaje AA.</p>
                     <div class="main-button">
-                    <a href="{{route('products')}}">Buscar Productos!</a>
+                    <a href="{{route('categorias')}}">Buscar Productos!</a>
                     </div>
                 </div>
                 </div>

@@ -9,10 +9,10 @@
         <div class="col-md-12">
           <div class="footer-menu">
             <ul>
-              <li><a href="{{route('home')}}">Inicio</a></li>
-              <li><a href="{{route('contact')}}">Ayuda</a></li>
-              <li><a href="{{route('about')}}">Quienes somos?</a></li>
-              <li><a href="{{route('contact')}}">Contacto</a></li>
+              <li><a href="{{route('inicio')}}">Inicio</a></li>
+              <li><a href="{{route('contacto')}}">Ayuda</a></li>
+              <li><a href="{{route('quienesSomos')}}">Quienes somos?</a></li>
+              <li><a href="{{route('contacto')}}">Contacto</a></li>
               <li><a href="@include('Ecoommerce.components.Desarrollador')">Desarrollador</a></li>
             </ul>
           </div>
