@@ -13,7 +13,7 @@
               <li><a href="{{route('contacto')}}">Ayuda</a></li>
               <li><a href="{{route('quienesSomos')}}">Quienes somos?</a></li>
               <li><a href="{{route('contacto')}}">Contacto</a></li>
-              <li><a href="@include('Ecoommerce.components.Desarrollador')">Desarrollador</a></li>
+              <li><a @include('Ecoommerce.components.Desarrollador')>Desarrollador</a></li>
             </ul>
           </div>
         </div>

@@ -15,7 +15,7 @@
     <link href="{{ asset('build/Ecoommerce/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('build/Ecoommerce/assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('build/Ecoommerce/assets/css/tooplate-main.css') }}">
     <link rel="stylesheet" href="{{ asset('build/Ecoommerce/assets/css/owl.css') }}">
 

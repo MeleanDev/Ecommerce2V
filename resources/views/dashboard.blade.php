@@ -43,16 +43,16 @@
     <div class="cartas">
         <div class="row">
           <div class="col">
-            <x-adminlte-small-box title="N" text="Ventas Facturadas" icon="fas fa-handshake text-dark"
-                theme="success" url="#" url-text="Ver ventas facturadas"/>
+            <x-adminlte-small-box title="N" text="Suscritos" icon="fas fa-bullhorn text-dark"
+                theme="success" url="#" url-text="Ver SuscritosWeb"/>
           </div>
           <div class="col order-12">
-            <x-adminlte-small-box title="N" text="Cantidad Productos" icon="fas fa-boxes text-dark"
-                theme="danger" url="#" url-text="Ver registro productos"/>
+            <x-adminlte-small-box title="N" text="Categorias" icon="fas fa-boxes text-dark"
+                theme="danger" url="#" url-text="Ver registro Categorias"/>
           </div>
           <div class="col order-1">
-            <x-adminlte-small-box title="N" text="Cantidad Clientes" icon="fas fa-address-book text-dark"
-                theme="info" url="#" url-text="Ver registro clientes"/>
+            <x-adminlte-small-box title="N" text="Productos" icon="fas fa-archive text-dark"
+                theme="info" url="#" url-text="Ver registro Productos"/>
           </div>
         </div>
     </div>

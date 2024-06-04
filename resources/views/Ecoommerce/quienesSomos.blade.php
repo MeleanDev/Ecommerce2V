@@ -23,11 +23,11 @@
                 <div class="right-content">
                     <h5>{{$empresaD->nombreEmpresa}}</h5>
                     <p>Nuestros datos de contacto:</p>
-                    <p>Telefono: {{$empresaD->telefono}}</p>
-                    <p>Correo: {{$empresaD->correo}}</p>
-                    <p>Rif/Cedula: {{$empresaD->rif}}</p>
-                    <p>estado/ciudad: {{$empresaD->estado}}, {{$empresaD->ciudad}}</p>
-                    <p>Ubicacion: {{$empresaD->direccion}} {{$empresaD->codigoPostal}}</p>
+                    <p> <i class="fa fa-phone"></i> Telefono: {{$empresaD->telefono}}</p>
+                    <p> <i class="fa fa-envelope"></i> Correo: {{$empresaD->correo}}</p>
+                    <p> <i class="fa fa-address-card"></i> Rif/Cedula: {{$empresaD->rif}}</p>
+                    <p> <i class="fa fa-map"></i> estado/ciudad: {{$empresaD->estado}}, {{$empresaD->ciudad}}</p>
+                    <p> <i class="fa fa-map-marker"></i> Ubicacion: {{$empresaD->direccion}} {{$empresaD->codigoPostal}}</p>
                     <br><br>
                     <p>ESCRIBIR MENSAJE AQUI SOBRE NOSOSTROS!!!</p>
                     <div class="share">
