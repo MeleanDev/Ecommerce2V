@@ -17,7 +17,8 @@ class EcommerceWebController extends Controller{
         $empresaD = $this->ecommerce->DatosEmpresa();
         $fotos = $this->ecommerce->banners();
         $inicioInfo = $this->ecommerce->inicio();
-        return view('Ecoommerce.inicio', compact('empresaD', 'fotos', 'inicioInfo'));
+        $productos = $this->ecommerce->productos();
+        return view('Ecoommerce.inicio', compact('empresaD', 'fotos', 'inicioInfo', 'productos'));
     }
 
     public function categorias(){

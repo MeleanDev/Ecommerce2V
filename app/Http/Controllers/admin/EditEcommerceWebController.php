@@ -14,15 +14,32 @@ class EditEcommerceWebController extends Controller
         $this->EditEcommerce = $EditEcommerce;
     }
 
+    // Inicio
+
     public function inicio(){
         $datos = $this->EditEcommerce->inicioDatos();
         return view('admin.inicio', compact('datos'));
     }
 
+    public function inicioEdit(Request $datos){
+        try {
+         $this->EditEcommerce->inicioEliminar();
+         $this->EditEcommerce->inicioGuardar($datos['informacion']);
+         $respuesta = response()->json(['success' => true]);
+         } catch (\Throwable $th) {
+             $respuesta = response()->json(['error' => true]);
+         }
+         return $respuesta;
+     }
+
+    //  Banners
+
     public function banner(){
         $datos = $this->EditEcommerce->bannerDatos();
         return view('admin.banner', compact('datos'));
     }
+
+    // Quienes Somos
 
     public function quienesSomos(){
         $datos = $this->EditEcommerce->quinesSomosDatos();

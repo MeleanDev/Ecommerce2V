@@ -6,7 +6,7 @@
 
 <style>
 .banner {
-    background-image: url('{{$fotos->secundario}}');
+    background-image: url('{{$fotos->secundaria}}');
 }
 </style>
     <!-- Page Content -->

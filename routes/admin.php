@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function () {
             // Inicio
             Route::controller(EditEcommerceWebController::class)->group(function () {
                 Route::get('Inicio', 'inicio')->name('editInicio');
+                Route::post('Inicio', 'inicioEdit')->name('editInicio.editar');
             });
 
             // banners

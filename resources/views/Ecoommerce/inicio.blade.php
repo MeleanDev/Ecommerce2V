@@ -6,7 +6,7 @@
 
 <style>
     .banner {
-        background-image: url('{{$fotos->primario}}');
+        background-image: url('{{$fotos->primaria}}');
     }
     </style>
     <!-- Page Content -->
@@ -18,7 +18,7 @@
                 <div class="caption">
                     <h2>{{$empresaD->nombreEmpresa}}</h2>
                     <div class="line-dec"></div>
-                    <p>Poner Mensaje AA.</p>
+                    <p>{{$inicioInfo->informacion}}.</p>
                     <div class="main-button">
                     <a href="{{route('categorias')}}">Buscar Productos!</a>
                     </div>

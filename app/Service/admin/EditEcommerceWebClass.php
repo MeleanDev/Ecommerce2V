@@ -16,6 +16,14 @@ class EditEcommerceWebClass
             return $datos;
         }
 
+        public function inicioGuardar($datos){
+            $this->DB->inicioGuardar($datos);
+        }
+
+        public function inicioEliminar(){
+            $this->DB->inicioEliminar();
+        }
+
     // Banners
         public function bannerDatos(){
             $datos = $this->DB->inicioDatos();

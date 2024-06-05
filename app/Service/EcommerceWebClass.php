@@ -18,7 +18,8 @@ class EcommerceWebClass
     }
 
     public function productos(){
-        
+        $datos = $this->DB->productosDatos();
+        return $datos;
     }
 
     public function suscripcion($correo){

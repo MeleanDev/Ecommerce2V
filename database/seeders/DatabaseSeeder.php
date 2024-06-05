@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Banner;
 use App\Models\Empresa;
+use App\Models\Inicio;
+use App\Models\QuienesSomo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -39,5 +42,20 @@ class DatabaseSeeder extends Seeder
             'foto' => 'empresa/logo.png',
 
         ]);
+
+        Banner::create([
+            'primaria' => '',
+            'secundaria' => '',
+            'quienesSomos' => '',
+        ]);
+
+        QuienesSomo::create([
+            'informacion' => ''
+        ]);
+
+        Inicio::create([
+            'informacion' => ''
+        ]);
+
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\Categoria;
 use App\Models\Empresa;
 use App\Models\Inicio;
+use App\Models\Producto;
 use App\Models\QuienesSomo;
 use App\Models\SuscritoWeb;
 
@@ -93,6 +94,18 @@ class ConsultasDBClass{
             QuienesSomo::truncate();
         }
 
+    // Inicio
+        // Guardar dato
+        public function inicioGuardar($datos){
+            Inicio::create([
+                'informacion' => $datos
+            ]);
+        }
+        // Borrar datos
+        public function inicioEliminar(){
+            Inicio::truncate();
+        }
+
 /////////////////////////////////////////////////////////////////////////////
 //                          Ecommerce                                      //
 /////////////////////////////////////////////////////////////////////////////
@@ -131,5 +144,10 @@ class ConsultasDBClass{
             return $datos;
         }
 
+    // Productos 
+        public function productosDatos(){
+            $datos = Producto::all();   
+            return $datos;
+        }
 }
 

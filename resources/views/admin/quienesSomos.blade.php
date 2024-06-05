@@ -12,7 +12,6 @@
 
 @section('content_body')
 <div class="container">
-    @include('admin.componts.alert')
     {{-- Titulo --}}
     <div class="tittle h1 text-center">
         <h1>Quienes Somos Informacion</h1>
@@ -22,8 +21,8 @@
         @csrf
         <div class="form-group">
           <label for="informacion">Informacion para los usuarios</label>
-          <textarea class="form-control" id="informacion" name="informacion" rows="5" minlength="10" maxlength="500" required></textarea>
-          <small id="informacion" class="form-text text-muted">Tiene un maximo de 500 caracteres.</small>
+          <textarea class="form-control" id="informacion" name="informacion" rows="5" minlength="10" maxlength="2000" required></textarea>
+          <small id="informacion" class="form-text text-muted">Tiene un maximo de 2000 caracteres.</small>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
