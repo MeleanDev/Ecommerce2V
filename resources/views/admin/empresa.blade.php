@@ -26,7 +26,7 @@
                 </div>
                 <div class="text-center">
                     <input type="file" id="foto" name="foto" accept=".jpg,.png">
-                    <small id="foto" class="form-text text-muted">Esta informacion saldra en la Web del Ecoommerce.</small>
+                    <small id="foto" class="form-text text-muted">Se recomienda una dimension de 122x26.</small>
                     @if ($errors->has('foto'))
                       <span class="error text-danger">{{ $errors->first('foto') }}</span>
                     @endif

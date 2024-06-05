@@ -1,1 +1,1 @@
-<img src="{{ asset($empresaD->foto) }}" alt="{{$empresaD->nombre}}" height="40" width="50">
+<img src="{{ asset($empresaD->foto) }}" alt="{{$empresaD->nombre}}">
