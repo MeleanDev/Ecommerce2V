@@ -19,9 +19,9 @@
                 @csrf
                 <div class="img text-center mb-3">
                     @if (isset($datos) && isset($datos->foto) && !empty($datos->foto))
-                        <img class="rounded" src="{{ asset($datos->foto) }}" width="200" alt="img empresa">
+                        <img class="rounded" src="{{ asset($datos->foto) }}" width="122" height="26" alt="img empresa">
                     @else
-                        <img class="rounded" src="{{ asset('vendor/adminlte/dist/img/logo.png') }}" width="200" alt="img empresa">
+                        <img class="rounded" src="{{ asset('vendor/adminlte/dist/img/logo.png') }}" width="122" height="26" alt="img empresa">
                     @endif
                 </div>
                 <div class="text-center">

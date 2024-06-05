@@ -7,7 +7,7 @@
 {{-- Content body: main page content --}}
 
 @section('content_body')
-<div class="container">
+<div class="container text-center">
     @include('admin.componts.alert')
     {{-- Titulo --}}
     <div class="tittle h1 text-center mb-4">
@@ -50,7 +50,7 @@
                 <label class="custom-file-label" for="primaria">Seleccionar archivo</label>
                 </div>
             </div>
-            <small class="form-text text-muted">Se recomienda unas Dimensiones </small>
+            <small class="form-text text-muted">Se recomienda unas Dimensiones 2765x653</small>
             <div class="text-center">
                 <button class="btn btn-primary" type="submit">Cargar imagen</button>
             </div>

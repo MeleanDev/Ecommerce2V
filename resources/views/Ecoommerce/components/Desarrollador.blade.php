@@ -1,1 +1,1 @@
-href="https://www.instagram.com/meleandev/"
+href="https://www.instagram.com/meleandev/" target="_blank" rel="noopener noreferrer"

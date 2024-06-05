@@ -38,7 +38,7 @@
     </div>
 
     <strong>
-        <a href="{{ config('app.company_url', '#') }}">
+        <a class="" href="{{ config('app.company_url', '#') }}" target="_blank" rel="noopener noreferrer">
             {{ config('app.company_name', 'My company') }}
         </a>
     </strong>
@@ -60,16 +60,6 @@
 
 @push('css')
 <style type="text/css">
-
-    {{-- You can add AdminLTE customizations here --}}
-    /*
-    .card-header {
-        border-bottom: none;
-    }
-    .card-title {
-        font-weight: 600;
-    }
-    */
 
 </style>
 @endpush
