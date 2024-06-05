@@ -335,11 +335,15 @@ return [
             'submenu' => [
                 [
                     'text' => 'Inicio',
-                    'url' => 'categoria',
+                    'route' => 'editInicio',
+                ],
+                [
+                    'text' => 'Banners',
+                    'route' => 'editBanner',
                 ],
                 [
                     'text' => 'Quienes Somos',
-                    'url' => 'categoria',
+                    'route' => 'editSomos',
                 ],
             ],
         ],

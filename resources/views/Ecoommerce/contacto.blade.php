@@ -3,7 +3,14 @@
 @section('tittle', 'contacto')
 
 @section('content')
+<style>
+    .banner {
+        background-image: url('{{$fotos->secundario}}');
+    }
+</style>
     <!-- Page Content -->
+    <div class="banner">
+    </div>
         <!-- About Page Starts Here -->
         <div class="contact-page">
             <div class="container">

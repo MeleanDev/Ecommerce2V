@@ -3,6 +3,12 @@
 @section('tittle', 'Inicio')
 
 @section('content')
+
+<style>
+    .banner {
+        background-image: url('{{$fotos->primario}}');
+    }
+    </style>
     <!-- Page Content -->
         <!-- Banner Starts Here -->
         <div class="banner">

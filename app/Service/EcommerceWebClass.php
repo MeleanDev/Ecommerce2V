@@ -25,8 +25,23 @@ class EcommerceWebClass
         $this->DB->suscripcionWeb($correo);
     }
 
-    public function DatosEmpresa(){
+    public function datosEmpresa(){
         $empresa = $this->DB->obtenerDatosEmpresa();
         return $empresa;
+    }
+
+    public function banners(){
+        $fotos = $this->DB->bannerDatos();
+        return $fotos;
+    }
+
+    public function quinesSomos(){
+        $datos = $this->DB->quienesSomosInformacion();
+        return $datos;
+    }
+
+    public function inicio(){
+        $datos = $this->DB->inicioDatos();
+        return $datos;
     }
 }

@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-md-6">
                 <div class="left-image">
-                    <img src="{{ asset('build/Ecoommerce/assets/images/about-us.jpg') }}" alt="">
+                    <img src="{{$fotos->quienesSomos}}" alt="">
                 </div>
                 </div>
                 <div class="col-md-6">
@@ -29,7 +29,7 @@
                     <p> <i class="fa fa-map"></i> estado/ciudad: {{$empresaD->estado}}, {{$empresaD->ciudad}}</p>
                     <p> <i class="fa fa-map-marker"></i> Ubicacion: {{$empresaD->direccion}} {{$empresaD->codigoPostal}}</p>
                     <br><br>
-                    <p>ESCRIBIR MENSAJE AQUI SOBRE NOSOSTROS!!!</p>
+                    <p>{{$datos->informacion}}</p>
                     <div class="share">
                     <h6>Encuéntranos en: <span><a href="{{$empresaD->facebook}}"><i class="fa fa-facebook"></i></a><a href="{{$empresaD->instagram}}"><i class="fa fa-instagram"></i></a></span></h6>
                     </div>

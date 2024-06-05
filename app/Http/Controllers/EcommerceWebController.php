@@ -15,13 +15,16 @@ class EcommerceWebController extends Controller{
 
     public function inicio(){
         $empresaD = $this->ecommerce->DatosEmpresa();
-        return view('Ecoommerce.inicio', compact('empresaD'));
+        $fotos = $this->ecommerce->banners();
+        $inicioInfo = $this->ecommerce->inicio();
+        return view('Ecoommerce.inicio', compact('empresaD', 'fotos', 'inicioInfo'));
     }
 
     public function categorias(){
         $empresaD = $this->ecommerce->DatosEmpresa();
         $categorias = $this->ecommerce->categorias();
-        return view('Ecoommerce.categoria', compact('empresaD', 'categorias'));
+        $fotos = $this->ecommerce->banners();
+        return view('Ecoommerce.categoria', compact('empresaD', 'categorias', 'fotos'));
     }
 
     public function productos(){
@@ -31,12 +34,15 @@ class EcommerceWebController extends Controller{
 
     public function quienesSomos(){
         $empresaD = $this->ecommerce->DatosEmpresa();
-        return view('Ecoommerce.quienesSomos', compact('empresaD'));
+        $fotos = $this->ecommerce->banners();
+        $datos = $this->ecommerce->quinesSomos();
+        return view('Ecoommerce.quienesSomos', compact('empresaD', 'fotos', 'datos'));
     }
 
     public function contacto(){
         $empresaD = $this->ecommerce->DatosEmpresa();
-        return view('Ecoommerce.contacto', compact('empresaD'));
+        $fotos = $this->ecommerce->banners();
+        return view('Ecoommerce.contacto', compact('empresaD', 'fotos'));
     }
 
     public function SuscripcionWeb(Request $corre){

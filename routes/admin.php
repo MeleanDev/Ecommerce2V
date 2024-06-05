@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\CategoriaController;
+use App\Http\Controllers\admin\EditEcommerceWebController;
 use App\Http\Controllers\admin\EmpresaController;
 use App\Http\Controllers\admin\ProductoController;
 use App\Http\Controllers\admin\SuscritoWebController;
@@ -41,6 +42,25 @@ Route::middleware('auth')->group(function () {
             // Productos
             Route::controller(ProductoController::class)->group(function () {
                 Route::get('Productos', 'index')->name('producto');
+            });
+        });
+
+        // EcommerceWebEdit
+        Route::prefix('EcommerceWeb')->group(function () {
+            // Inicio
+            Route::controller(EditEcommerceWebController::class)->group(function () {
+                Route::get('Inicio', 'inicio')->name('editInicio');
+            });
+
+            // banners
+            Route::controller(EditEcommerceWebController::class)->group(function () {
+                Route::get('Banners', 'banner')->name('editBanner');
+            });
+
+            // Quienes Somos
+            Route::controller(EditEcommerceWebController::class)->group(function () {
+                Route::get('Quienes-Somos', 'quienesSomos')->name('editSomos');
+                Route::post('Quienes-Somos', 'quienesSomosEdit')->name('editSomos.editar');
             });
         });
 

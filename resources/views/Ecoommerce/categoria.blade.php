@@ -6,12 +6,7 @@
 
 <style>
 .banner {
-    margin-top: 50px;
-    background-image: url('{{$foto}}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 150px 0px;
-    background-position: center center;
+    background-image: url('{{$fotos->secundario}}');
 }
 </style>
     <!-- Page Content -->

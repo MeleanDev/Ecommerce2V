@@ -3,7 +3,14 @@
 @section('tittle', 'Productos')
 
 @section('content')
+<style>
+    .banner {
+        background-image: url('{{$fotos->secundario}}');
+    }
+</style>
     <!-- Page Content -->
+    <div class="banner">
+    </div>
             <!-- Items Starts Here -->
             <div class="featured-page">
                 <div class="container">

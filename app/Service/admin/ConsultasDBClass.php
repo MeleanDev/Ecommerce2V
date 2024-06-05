@@ -2,14 +2,20 @@
 
 namespace App\Service\admin;
 
+use App\Models\Banner;
 use App\Models\Categoria;
 use App\Models\Empresa;
+use App\Models\Inicio;
+use App\Models\QuienesSomo;
 use App\Models\SuscritoWeb;
 
 class ConsultasDBClass{
-// Admin
+/////////////////////////////////////////////////////////////////////////////
+//                          Adminstrador                                   //
+/////////////////////////////////////////////////////////////////////////////
+
     // Empresa
-        // Registramos los datos en la DB
+        // Registrar los datos
         public function registroDataEmpresa($datos){
             $empresa = $this->obtenerDatosEmpresa();
             $empresa->nombreEmpresa = $datos[0];
@@ -28,14 +34,14 @@ class ConsultasDBClass{
             $empresa->save();
         }
 
-        // Obetener los datos de la empresa
+        // Obetener los datos
         public function obtenerDatosEmpresa(){
             $datos = Empresa::first();
             return $datos;
         }
 
     // Categoria
-        // Crear Categoria
+        // Crear 
         public function crearCategoria($datos, $foto){
             $categoria = new Categoria();
             $categoria->nombre = $datos->nombre; 
@@ -45,34 +51,73 @@ class ConsultasDBClass{
             $categoria->save();
         }
 
-        // Obetener los datos de las Categorias
+        // Obetener los datos paginada
         public function obtenerDatosCategorias(){
             $datos = Categoria::all();
             return $datos;
         }
 
-        // Obetener los datos de las Categorias
-        public function obtenerDatosCategoriasPaginate(){
-            $datos = Categoria::paginate(9);
-            return $datos;
-        }
     // Suscritos
+        // Obetener los datos
         public function suscritosList(){
             $datos = SuscritoWeb::all();
             return $datos;
         }
 
+        // Borrar los datos
         public function suscritosBorrarTodo(){
             SuscritoWeb::truncate();
         }
 
-// Ecommerce
+    // Quienes Somos
+        // Guardar dato
+        public function QuinesSomosGuardar($datos){
+            QuienesSomo::create([
+                'informacion' => $datos
+            ]);
+        }
+        // Borrar datos
+        public function quinesSomosEliminar(){
+            QuienesSomo::truncate();
+        }
+
+/////////////////////////////////////////////////////////////////////////////
+//                          Ecommerce                                      //
+/////////////////////////////////////////////////////////////////////////////
+
     // SuscripcionesEcommerce
-    public function suscripcionWeb($correo){
-        $suscrito = new SuscritoWeb();
-        $suscrito->correo = $correo->correo;
-        $suscrito->save();
-    }
+        public function suscripcionWeb($correo){
+            $suscrito = new SuscritoWeb();
+            $suscrito->correo = $correo->correo;
+            $suscrito->save();
+        }
+
+    // Obetener los datos de las Categorias
+        public function obtenerDatosCategoriasPaginate(){
+            $datos = Categoria::paginate(9);
+            return $datos;
+        }
+
+/////////////////////////////////////////////////////////////////////////////
+//                       Consultas Compartidas                             //
+/////////////////////////////////////////////////////////////////////////////
+
+    // Inicio
+        public function inicioDatos(){
+            $datos = Inicio::first();
+            return $datos;
+        }
+
+    // Banner
+        public function bannerDatos(){
+            $datos = Banner::first();
+            return $datos;
+        }
+    // Infomracion Quienes Somos
+        public function quienesSomosInformacion(){
+            $datos = QuienesSomo::first();
+            return $datos;
+        }
 
 }
 
