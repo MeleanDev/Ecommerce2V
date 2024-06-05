@@ -23,7 +23,7 @@ class CategoriaClass
     public function editarCategoria($datos, Categoria $id){
 
         if ($datos->hasFile('foto')) {
-            $this->eliminarFotoCarpt($id->foto);
+            $this->DB->eliminarFotoCarpt($id->foto);
             $fotoNombre = $this->guardarImg($datos);
             $id->foto = $fotoNombre;
         }
@@ -41,12 +41,12 @@ class CategoriaClass
         return $datos; 
     }
 
-    public function eliminarFotoCarpt($foto){
-        unlink(public_path($foto));
-    }
-
     public function eliminarRegistroCategoria(Categoria $datos){
         $datos->delete();
+    }
+
+    public function eliminarFotoCarpt($fotoNombre){
+        $this->DB->eliminarFotoCarpt($fotoNombre);
     }
     
 }

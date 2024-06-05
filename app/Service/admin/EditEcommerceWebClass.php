@@ -26,8 +26,37 @@ class EditEcommerceWebClass
 
     // Banners
         public function bannerDatos(){
-            $datos = $this->DB->inicioDatos();
+            $datos = $this->DB->bannerDatos();
             return $datos;
+        }
+
+        // Cambiamos en nombre Primaria
+        public function guardarBannerPrimaria($nombre){
+            $this->DB->editarBannerPrimaria($nombre);
+        }
+
+        // Cambiamos en nombre Secundaria
+        public function guardarBannerSecundaria($nombre){
+            $this->DB->editarBannerSecundaria($nombre);
+        }
+
+        // Cambiamos en nombre QueSomos
+        public function guardarbannerQueSomos($nombre){
+            $this->DB->editarBannerQueSomos($nombre);
+        }
+
+        // Nombre de la img
+        public function nombreImagen($datos){
+            $filename = time().'.'.$datos->foto->extension();
+            $datos->foto->move(public_path('empresa/banners'), $filename);
+
+            $nombreActualizado = 'empresa/banners/'.$filename;
+            return $nombreActualizado;
+        }
+
+        // Eliminar Foto anterior
+        public function eliminarFotoCarpt($fotoAnterior){
+            $this->DB->eliminarFotoCarpt($fotoAnterior);
         }
 
     // Quienes Somos

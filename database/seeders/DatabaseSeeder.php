@@ -44,9 +44,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Banner::create([
-            'primaria' => '',
-            'secundaria' => '',
-            'quienesSomos' => '',
+            'primaria' => 'empresa/banners/banner-bg.jpg',
+            'secundaria' => 'empresa/banners/secundaria.jpg',
+            'quienesSomos' => 'empresa/banners/about-us.jpg',
         ]);
 
         QuienesSomo::create([

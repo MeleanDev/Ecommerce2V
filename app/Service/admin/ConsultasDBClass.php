@@ -15,6 +15,11 @@ class ConsultasDBClass{
 //                          Adminstrador                                   //
 /////////////////////////////////////////////////////////////////////////////
 
+    // Borrar archivo de la app
+        public function eliminarFotoCarpt($foto){
+            unlink(public_path($foto));
+        }
+
     // Empresa
         // Registrar los datos
         public function registroDataEmpresa($datos){
@@ -105,6 +110,28 @@ class ConsultasDBClass{
         public function inicioEliminar(){
             Inicio::truncate();
         }
+    // Banners
+        // Editar Banners Primaria
+        public function editarBannerPrimaria($datos){
+            $banner = Banner::first();
+            $banner->primaria = $datos;
+            $banner->save();
+        }
+
+        // Editar Banners Secundaria
+        public function editarBannerSecundaria($datos){
+            $banner = Banner::first();
+            $banner->secundaria = $datos;
+            $banner->save();
+        }
+
+        // Editar Banners QueSomos
+        public function editarBannerQueSomos($datos){
+            $banner = Banner::first();
+            $banner->quienesSomos = $datos;
+            $banner->save();
+        }
+
 
 /////////////////////////////////////////////////////////////////////////////
 //                          Ecommerce                                      //

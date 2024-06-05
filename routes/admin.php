@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
             // banners
             Route::controller(EditEcommerceWebController::class)->group(function () {
                 Route::get('Banners', 'banner')->name('editBanner');
+                Route::post('Banners', 'bannerfoto')->name('editBanner.editar');
             });
 
             // Quienes Somos
