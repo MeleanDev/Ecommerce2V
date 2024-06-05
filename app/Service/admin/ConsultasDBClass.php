@@ -57,10 +57,22 @@ class ConsultasDBClass{
             return $datos;
         }
 
+        // Obetener los datos Count
+        public function obtenerDatosCategoriasCount(){
+            $datos = Categoria::Count();
+            return $datos;
+        }
+
     // Suscritos
         // Obetener los datos
         public function suscritosList(){
             $datos = SuscritoWeb::all();
+            return $datos;
+        }
+
+        // Obetener los datos Count
+        public function suscritosCount(){
+            $datos = SuscritoWeb::Count();
             return $datos;
         }
 

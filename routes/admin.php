@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\CategoriaController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\EditEcommerceWebController;
 use App\Http\Controllers\admin\EmpresaController;
 use App\Http\Controllers\admin\ProductoController;
@@ -12,9 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('Administracion')->group(function () {
 
         // Panel Principal
-        Route::get('/Panel-Principal', function () {
-            return view('dashboard');
-        })->name('dashboard');
+        Route::get('Panel-Principal', [DashboardController::class, 'index'])->name('dashboard');
 
         // Empresa
         Route::controller(EmpresaController::class)->group(function () {

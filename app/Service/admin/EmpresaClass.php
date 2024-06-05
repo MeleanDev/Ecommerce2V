@@ -2,8 +2,6 @@
 
 namespace App\Service\admin;
 
-use App\service\admin\ConsultasDBClass;
-
 class EmpresaClass{
     private $DB;
 

@@ -43,11 +43,11 @@
     <div class="cartas">
         <div class="row">
           <div class="col">
-            <x-adminlte-small-box title="N" text="Suscritos" icon="fas fa-bullhorn text-dark"
+            <x-adminlte-small-box title="{{$suscritos}}" text="Suscritos" icon="fas fa-bullhorn text-dark"
                 theme="success" url="#" url-text="Ver SuscritosWeb"/>
           </div>
           <div class="col order-12">
-            <x-adminlte-small-box title="N" text="Categorias" icon="fas fa-boxes text-dark"
+            <x-adminlte-small-box title="{{$categorias}}" text="Categorias" icon="fas fa-boxes text-dark"
                 theme="danger" url="#" url-text="Ver registro Categorias"/>
           </div>
           <div class="col order-1">
