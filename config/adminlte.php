@@ -403,9 +403,19 @@ return [
                     'location' => 'https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.min.js',
                 ],
                 [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js',
+                ],
+                [
                     'type' => 'css',
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap4.css',
                 ],
             ],
         ],

@@ -13,24 +13,30 @@ class CategoriaClass
     }
 
     public function guardarImg($datos){
-            $filename = time().'.'.$datos->foto->extension();
-            $datos->foto->move(public_path('empresa/categorias/img'), $filename);
+            $extension = $datos->file('foto')->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $datos->file('foto')->move(public_path('empresa/categorias/img'), $filename);
 
             $nombreActualizado = 'empresa/categorias/img/'.$filename;
             return $nombreActualizado;
     }
 
-    public function editarCategoria($datos, Categoria $id){
-
+    public function editarCategoria($datos, $id){
+        $categoria = $this->DB->categoriaId($id);
         if ($datos->hasFile('foto')) {
-            $this->DB->eliminarFotoCarpt($id->foto);
+            $this->DB->eliminarFotoCarpt($categoria->foto);
             $fotoNombre = $this->guardarImg($datos);
-            $id->foto = $fotoNombre;
+            $categoria->foto = $fotoNombre;
         }
-        $id->nombre = $datos->nombre;
-        $id->descripcion = $datos->descripcion;
-        $id->save();
-}
+        $categoria->nombre = $datos->input('nombre');
+        $categoria->descripcion = $datos->input('descripcion');
+        $categoria->save();
+    }
+
+    public function categoriaId($dato){
+        $datos = $this->DB->categoriaId($dato);
+        return $datos;
+    }
 
     public function crearCategoria($datos, $foto){
         $this->DB->crearCategoria($datos, $foto);

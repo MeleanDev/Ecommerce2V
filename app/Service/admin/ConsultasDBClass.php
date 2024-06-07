@@ -50,8 +50,8 @@ class ConsultasDBClass{
         // Crear 
         public function crearCategoria($datos, $foto){
             $categoria = new Categoria();
-            $categoria->nombre = $datos->nombre; 
-            $categoria->descripcion = $datos->descripcion;
+            $categoria->nombre = $datos->input('nombre'); 
+            $categoria->descripcion = $datos->input('descripcion');
             $categoria->foto = $foto;
             $categoria->cantidad = 0;
             $categoria->save();
@@ -66,6 +66,12 @@ class ConsultasDBClass{
         // Obetener los datos Count
         public function obtenerDatosCategoriasCount(){
             $datos = Categoria::Count();
+            return $datos;
+        }
+
+        // Obetener los datos de una categoria
+        public function categoriaId($id){
+            $datos = Categoria::where('id', $id)->first();
             return $datos;
         }
 

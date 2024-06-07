@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->string('nombre')->unique();
             $table->string('descripcion')->nullable();
-            $table->bigInteger('cantidad')->default(0);
+            $table->bigInteger('cantidad')->nullable()->default(0);
             $table->timestamps();
         });
     }

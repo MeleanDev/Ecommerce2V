@@ -33,9 +33,11 @@ Route::middleware('auth')->group(function () {
             // Categorias
             Route::controller(CategoriaController::class)->group(function () {
                 Route::get('Categorias', 'index')->name('categoria');
+                Route::get('Categorias/Lista', 'lista')->name('categoria.lista');
                 Route::post('Categorias', 'crear')->name('categoria.crear');
-                Route::put('Categorias/{id}', 'editar')->name('categoria.editar');
-                Route::delete('Categorias/{id}', 'eliminar')->name('categoria.eliminar');
+                Route::get('Categorias/Datos/{id?}', 'datoCategoria')->name('categoria.datoCategoria');
+                Route::post('Categorias/Editar/{id?}', 'editar')->name('categoria.editar');
+                Route::delete('Categorias/{id?}', 'eliminar')->name('categoria.eliminar');
             });
 
             // Productos
