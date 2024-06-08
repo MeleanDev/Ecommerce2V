@@ -23,7 +23,7 @@ class CategoriaRequest extends FormRequest
     {
         return [
             'nombre' => ['required', 'string', 'max:255'],
-            'descripcion' => ['string', 'max:255'],
+            'descripcion' => ['nullable','string', 'max:255'],
             'foto' => [
                 'image',
                 'required',

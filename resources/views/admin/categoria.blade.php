@@ -55,7 +55,7 @@
     <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form id="formulario" action="" enctype="multipart/form-data">
+                    <form id="formulario" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-header" id="bg-titulo">
                             <h5 class="modal-title" id="titulo"></h5>
@@ -105,6 +105,7 @@
 @push('js')
 <script>
     var token = $('meta[name="csrf-token"]').attr('content');
+    var rutaAccion = "";
 
     var table = new DataTable('#datatable', {
         ajax: '{{route('categoria.lista')}}',
@@ -190,67 +191,65 @@
     };
 
     // Enviar datos
-$('#formulario').submit(function(e){
-    e.preventDefault(); // Previene el recargo de la página
-    
-    var rutaAccion = $("#formulario").attr("action");
+    $('#formulario').submit(function(e){
+        e.preventDefault(); // Previene el recargo de la página
 
-    var formData = new FormData(this);
-    formData.append('foto', $('#foto')[0].files[0]);
-    formData.append('descripcion', $.trim($('#descripcion').val()));
-    formData.append('nombre', $.trim($('#nombre').val()));
+        var formData = new FormData(this);
+        formData.append('foto', $('#foto')[0].files[0]);
+        formData.append('descripcion', $.trim($('#descripcion').val()));
+        formData.append('nombre', $.trim($('#nombre').val()));
 
-        $.ajax({
-        url: rutaAccion,
-        method: 'POST',
-        data: formData,
-        dataType: 'JSON',
-        contentType: false, 
-        processData: false,
-        cache:false,
-        headers: {
-            'X-CSRF-TOKEN': token
-        },
-        success: function(data) {
-            table.ajax.reload(null, false);
-            if (data.success) {
+            $.ajax({
+            url: rutaAccion,
+            method: 'POST',
+            data: formData,
+            dataType: 'JSON',
+            contentType: false, 
+            processData: false,
+            cache:false,
+            headers: {
+                'X-CSRF-TOKEN': token
+            },
+            success: function(data) {
+                table.ajax.reload(null, false);
+                if (data.success) {
+                    Swal.fire({
+                    title: data.informacion,
+                    text: "El registro fue "+data.accion+" al sistema",
+                    icon: "success",
+                    timer: 2000,
+                    showConfirmButton: false,
+                    timerProgressBar: true
+                    }); 
+            } else {
                 Swal.fire({
-                title: data.informacion,
-                text: "El registro fue "+data.accion+" al sistema",
-                icon: "success",
+                title: 'Categoria no registrada',
+                text: "Error en el registro",
+                icon: "error",
                 timer: 2000,
                 showConfirmButton: false,
                 timerProgressBar: true
                 }); 
-          } else {
-              Swal.fire({
-              title: 'Categoria no registrada',
-              text: "Error en el registro",
-              icon: "error",
-              timer: 2000,
-              showConfirmButton: false,
-              timerProgressBar: true
-              }); 
-          }
+            }
 
-        },
-        error: function(xhr, status, error) {
-        Swal.fire({
-            title: "Categoria no agregada",
-            text: "El registro no fue agregado al sistema!!",
-            icon: "error"
+            },
+            error: function(xhr, status, error) {
+            Swal.fire({
+                title: "Categoria no agregada",
+                text: "El registro no fue agregado al sistema!!",
+                icon: "error"
+            });
+            }
         });
-        }
-    });
 
-    $('#modalCRUD').modal('hide'); // Cierra el modal después de la solicitud AJAX
-});
+        $('#modalCRUD').modal('hide'); // Cierra el modal después de la solicitud AJAX
+    });
 
   // ACCIONES
     crear = function(){
         $("#formulario").trigger("reset");
         metodo = "POST";
-        $("#formulario").attr("action", "{{route('categoria.crear')}}");
+        rutaAccion = "{{route('categoria.crear')}}";
         $("#nombre").attr("readonly", false);
         $("#descripcion").attr("readonly", false);
         $("#foto").attr("required", true);
@@ -291,7 +290,7 @@ $('#formulario').submit(function(e){
         try {
             datos = await consulta(id);
             metodo = "put";
-            $("#formulario").attr("action", "{{route('categoria.editar')}}/"+id);
+            rutaAccion = "{{route('categoria.editar')}}/"+id;
             $("#titulo").html("Editar Categoria -> " + datos.nombre);
             $("#bg-titulo").attr("class","modal-header bg-warning"); 
             $("#preview").attr("src", datos.fotoUrl);

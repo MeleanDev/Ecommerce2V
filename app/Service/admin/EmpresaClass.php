@@ -12,29 +12,31 @@ class EmpresaClass{
     public function ingresarDatos($datos){
 
         $DListos = [];
-        $DListos[0] = $datos->nombreEmpresa;
-        $DListos[1] = $datos->razonSocial;
-        $DListos[2] = $datos->rif;
-        $DListos[3] = $datos->correo;
-        $DListos[4] = $datos->telefono; 
-        $DListos[5] = $datos->direccion;
-        $DListos[6] = $datos->ciudad;
-        $DListos[7] = $datos->estado;
-        $DListos[8] = $datos->codigoPostal;
-        $DListos[9] = $datos->google;
-        $DListos[10] = $datos->facebook;
-        $DListos[11] = $datos->instagram;
+        $DListos[0] = $datos->input('nombreEmpresa');
+        $DListos[1] = $datos->input('razonSocial');
+        $DListos[2] = $datos->input('rif');
+        $DListos[3] = $datos->input('correo');
+        $DListos[4] = $datos->input('telefono');
+        $DListos[5] = $datos->input('direccion');
+        $DListos[6] = $datos->input('ciudad');
+        $DListos[7] = $datos->input('estado');
+        $DListos[8] = $datos->input('codigoPostal');
+        $DListos[9] = $datos->input('google');
+        $DListos[10] = $datos->input('facebook');
+        $DListos[11] = $datos->input('instagram');
         $DListos[12] = ''; 
 
         if ($datos->hasFile('foto')) {
             $fot = $this->DB->obtenerDatosEmpresa();
             if (!empty($fot->foto)) {
                 if (file_exists(public_path($fot->foto))) {
-                    unlink(public_path($fot->foto));
+                    $this->DB->eliminarFotoCarpt($fot->foto);
                   }
             }
-            $filename = time().'.'.$datos->foto->extension();
-            $datos->foto->move(public_path('empresa'), $filename);
+
+            $extension = $datos->file('foto')->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $datos->fotofile('foto')->move(public_path('empresa'), $filename);
 
             $DListos[12] = 'empresa/'.$filename;
         }

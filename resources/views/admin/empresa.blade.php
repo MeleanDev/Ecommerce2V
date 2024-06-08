@@ -4,38 +4,40 @@
 
 @section('subtitle', 'Empresa')
 
+{{-- plugins --}}
+  {{-- Sweetalert2 --}}
+  @section('plugins.Sweetalert2', true)
+
 {{-- Content body: main page content --}}
 {{-- script --}}
 
 
 @section('content_body')
     <div class="container">
-      @include('admin.componts.alert')
         <div class="tittle text-center">
             <h1>Datos de la empresa</h1>
         </div>
         <div class="form">
-            <form action="{{route('empresa.datos')}}" method="POST" enctype="multipart/form-data">
+            <form id="formulario" enctype="multipart/form-data">
                 @csrf
                 <div class="img text-center mb-3">
-                    @if (isset($datos) && isset($datos->foto) && !empty($datos->foto))
-                        <img class="rounded" src="{{ asset($datos->foto) }}" width="122" height="26" alt="img empresa">
-                    @else
-                        <img class="rounded" src="{{ asset('vendor/adminlte/dist/img/logo.png') }}" width="122" height="26" alt="img empresa">
-                    @endif
+                  <img class="rounded" id="preview" src="{{ asset($datos->foto) }}" width="122" height="26" alt="img empresa">
                 </div>
+                {{-- Foto --}}
                 <div class="text-center">
-                    <input type="file" id="foto" name="foto" accept=".jpg,.png">
-                    <small id="foto" class="form-text text-muted">Se recomienda una dimension de 122x26.</small>
+                    <input type="file" id="foto" accept=".jpg,.png">
+                    <small class="form-text text-muted">Se recomienda una dimension de 122x26.</small>
                     @if ($errors->has('foto'))
                       <span class="error text-danger">{{ $errors->first('foto') }}</span>
                     @endif
                 </div>
+                {{-- Empresa DATOS --}}
                 <div class="Datos de la empresa Principales">
+                  {{-- Nombre y razon social --}}
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="nombre">Nombre de la empresa</label>
-                      <input type="text" name="nombreEmpresa" class="form-control" id="nombre" placeholder="Nombre de la empresa"
+                      <label for="nombreEmpresa">Nombre de la empresa</label>
+                      <input type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de la empresa"
                       @if ($datos) 
                       value="{{$datos->nombreEmpresa}}" 
                       @endif 
@@ -47,7 +49,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="razonSocial">Razon social</label>
-                      <input type="text" name="razonSocial" class="form-control" id="razonSocial" placeholder="Razon social"
+                      <input type="text" class="form-control" name="razonSocial" id="razonSocial" placeholder="Razon social"
                       @if ($datos) 
                       value="{{$datos->razonSocial}}" 
                       @endif 
@@ -58,10 +60,11 @@
                       @endif
                     </div>
                   </div>
+                  {{-- Rif --}}
                   <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="cedula">Rif/Cedula</label>
-                        <input type="text" name="rif" class="form-control" id="cedula" placeholder="Rif/Cedula"
+                        <label for="rif">Rif/Cedula</label>
+                        <input type="text" class="form-control" name="rif" id="rif" placeholder="Rif/Cedula"
                         @if ($datos) 
                         value="{{$datos->rif}}" 
                         @endif  
@@ -72,10 +75,11 @@
                       @endif
                       </div>
                   </div>
+                  {{-- Correo y Telefono --}}
                   <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="correo">Correo</label>
-                        <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo electronico"
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo electronico"
                         @if ($datos) 
                         value="{{$datos->correo}}" 
                         @endif  
@@ -87,7 +91,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="telefono">Telefono</label>
-                        <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Telefono"
+                        <input type="text"  class="form-control" name="telefono" id="telefono" placeholder="Telefono"
                         @if ($datos) 
                         value="{{$datos->telefono}}" 
                         @endif  
@@ -98,9 +102,10 @@
                       @endif
                       </div>
                   </div>
+                  {{-- Direccion --}}
                   <div class="form-group">
                     <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" class="form-control" id="direccion" placeholder="Direccion"
+                    <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion"
                     @if ($datos) 
                     value="{{$datos->direccion}}" 
                     @endif  
@@ -110,10 +115,11 @@
                     <span class="error text-danger">{{ $errors->first('direccion') }}</span>
                       @endif
                   </div>
+                  {{--  --}}
                   <div class="form-row mb-3">
                     <div class="form-group col-md-6">
                       <label for="ciudad">Ciudad</label>
-                      <input type="text" name="ciudad" class="form-control" id="ciudad" placeholder="Ciudad"
+                      <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Ciudad"
                       @if ($datos) 
                       value="{{$datos->ciudad}}" 
                       @endif  
@@ -125,7 +131,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="estado">Estado</label>
-                      <input type="text" name="estado" class="form-control" id="estado" placeholder="Estado"
+                      <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado"
                       @if ($datos) 
                       value="{{$datos->estado}}" 
                       @endif  
@@ -136,8 +142,8 @@
                       @endif
                     </div>
                     <div class="form-group col-md-2">
-                      <label for="codigopostal">Codigo Postal</label>
-                      <input type="text" name="codigoPostal" class="form-control" id="codigopostal" placeholder="Codigo postal"
+                      <label for="codigoPostal">Codigo Postal</label>
+                      <input type="text" class="form-control" name="codigoPostal" id="codigoPostal" placeholder="Codigo postal"
                       @if ($datos) 
                       value="{{$datos->codigoPostal}}" 
                       @endif  
@@ -153,7 +159,7 @@
                   <h2 class="text-center h2">Links de GoogleMap y Redes Sociales</h2>
                   <div class="form-group">
                     <label for="google">GoogleMap Link || Solamente pegar la parte src</label>
-                    <input type="text" class="form-control" id="google" name="google" placeholder="Link del GoogleMap de la empresa" 
+                    <input type="text" class="form-control" name="google" id="google"  placeholder="Link del GoogleMap de la empresa" 
                     @if ($datos) 
                       value="{{$datos->google}}" 
                       @endif 
@@ -165,7 +171,7 @@
                   </div>
                   <div class="form-group">
                     <label for="facebook">Facebook Link</label>
-                    <input type="text" class="form-control" id="facebook" name="facebook"  placeholder="Link del facebook de la empresa" 
+                    <input type="text" class="form-control" name="facebook" id="facebook" placeholder="Link del facebook de la empresa" 
                     @if ($datos) 
                       value="{{$datos->facebook}}" 
                       @endif 
@@ -177,7 +183,7 @@
                   </div>
                   <div class="form-group">
                     <label for="instagram">Instagram Link</label>
-                    <input type="text" class="form-control" id="instagram" name="instagram" placeholder="Link del instagram de la empresa" 
+                    <input type="text" class="form-control" name="instagram" id="instagram" placeholder="Link del instagram de la empresa" 
                     @if ($datos) 
                       value="{{$datos->instagram}}" 
                       @endif 
@@ -195,3 +201,71 @@
         </div>
     </div>
 @stop
+@push('js')
+<script>
+  var token = $('meta[name="csrf-token"]').attr('content');
+
+  // Enviar datos
+  $('#formulario').submit(function(e){
+      e.preventDefault(); // Previene el recargo de la página
+
+      var formData = new FormData(this);
+        formData.append('foto', $('#foto')[0].files[0]);
+        formData.append('nombreEmpresa', $.trim($('#nombreEmpresa').val()));
+        formData.append('razonSocial', $.trim($('#razonSocial').val()));
+        formData.append('rif', $.trim($('#rif').val()));
+        formData.append('correo', $.trim($('#correo').val()));
+        formData.append('telefono', $.trim($('#telefono').val()));
+        formData.append('direccion', $.trim($('#direccion').val()));
+        formData.append('ciudad', $.trim($('#ciudad').val()));
+        formData.append('estado', $.trim($('#estado').val()));
+        formData.append('codigoPostal', $.trim($('#codigoPostal').val()));
+        formData.append('google', $.trim($('#google').val()));
+        formData.append('facebook', $.trim($('#facebook').val()));
+        formData.append('instagram', $.trim($('#instagram').val()));
+
+          $.ajax({
+          url: "{{route('empresa.datos')}}",
+          method: 'POST',
+          data: formData,
+          dataType: 'JSON',
+          contentType: false, 
+          processData: false,
+          cache:false,
+          headers: {
+              'X-CSRF-TOKEN': token
+          },
+          success: function(data) {
+              if (data.success) {
+                  Swal.fire({
+                  title: "Registro exitoso",
+                  text: "El registro fue almacenado al sistema",
+                  icon: "success",
+                  timer: 2000,
+                  showConfirmButton: false,
+                  timerProgressBar: true
+                  }); 
+          } else {
+              Swal.fire({
+              title: 'Error registro no almacenado',
+              text: "Error en el registro",
+              icon: "error",
+              timer: 2000,
+              showConfirmButton: false,
+              timerProgressBar: true
+              }); 
+          }
+
+          },
+          error: function(xhr, status, error) {
+          Swal.fire({
+              title: "Error en el envio",
+              text: "El registro no fue agregado al sistema!!",
+              icon: "error"
+          });
+          }
+      });
+  });
+
+</script>
+@endpush

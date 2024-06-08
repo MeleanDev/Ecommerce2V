@@ -35,6 +35,7 @@ class EmpresaRequest extends FormRequest
             'facebook' => ['required', 'string'],
             'instagram' => ['required', 'string'],
             'foto' => [
+                'nullable',
                 'image', 
                 'mimes:jpeg,png',
                 'max:12288', 

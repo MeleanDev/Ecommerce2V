@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\EmpresaRequest;
 use App\Service\admin\EmpresaClass;
+use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
@@ -19,8 +20,14 @@ class EmpresaController extends Controller
         return view('admin.empresa', compact('datos'));
     }
 
-    public function datos(EmpresaRequest $datos){
-        $this->EmpresaClass->ingresarDatos($datos);
-        return redirect()->route('empresa')->with('correctamente','Datos Actualizados');
+    public function datos(Request $datos){
+        try {
+            $this->EmpresaClass->ingresarDatos($datos);
+            $respuesta = response()->json(['success' => true]);
+        } catch (\Throwable $th) {
+            $respuesta = response()->json(['error' => true]);
+        }
+        return $respuesta;
     }
+        
 }
