@@ -75,6 +75,26 @@ class ConsultasDBClass{
             return $datos;
         }
 
+    // Productos
+        // Crear 
+        public function crearProducto($datos, $foto){
+            $producto = new Producto();
+            $producto->nombre = $datos->input('nombre');
+            $producto->codigo = $datos->input('codigo');  
+            $producto->descripcion = $datos->input('descripcion');
+            $producto->categoria = $datos->input('categoria');
+            $producto->precio = $datos->input('precio');
+            $producto->cantidad = $datos->input('cantidad');
+            $producto->foto = $foto;
+            $producto->save();
+        }
+
+        // Obetener los datos de una Producto
+        public function productoId($id){
+            $datos = Producto::where('id', $id)->first();
+            return $datos;
+        }
+
     // Suscritos
         // Obetener los datos
         public function suscritosList(){

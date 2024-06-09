@@ -43,6 +43,11 @@ Route::middleware('auth')->group(function () {
             // Productos
             Route::controller(ProductoController::class)->group(function () {
                 Route::get('Productos', 'index')->name('producto');
+                Route::get('Productos/Lista', 'lista')->name('producto.lista');
+                Route::post('Productos', 'crear')->name('producto.crear');
+                Route::get('Productos/Datos/{id?}', 'datoProducto')->name('producto.datoProducto');
+                Route::post('Productos/Editar/{id?}', 'editar')->name('producto.editar');
+                Route::delete('Productos/{id?}', 'eliminar')->name('producto.eliminar');
             });
         });
 

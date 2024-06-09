@@ -248,7 +248,6 @@
   // ACCIONES
     crear = function(){
         $("#formulario").trigger("reset");
-        metodo = "POST";
         rutaAccion = "{{route('categoria.crear')}}";
         $("#nombre").attr("readonly", false);
         $("#descripcion").attr("readonly", false);
@@ -289,7 +288,6 @@
     editar = async function(id){
         try {
             datos = await consulta(id);
-            metodo = "put";
             rutaAccion = "{{route('categoria.editar')}}/"+id;
             $("#titulo").html("Editar Categoria -> " + datos.nombre);
             $("#bg-titulo").attr("class","modal-header bg-warning"); 
