@@ -95,6 +95,12 @@ class ConsultasDBClass{
             return $datos;
         }
 
+        // Obetener los datos Count
+        public function obtenerDatosProductosCount(){
+            $datos = Producto::Count();
+            return $datos;
+        }
+
     // Suscritos
         // Obetener los datos
         public function suscritosList(){

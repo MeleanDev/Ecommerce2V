@@ -19,4 +19,9 @@ class DasboardClass
         $datos = $this->DB->obtenerDatosCategoriasCount();
         return $datos;
     }
+
+    public function productosCount(){
+        $datos = $this->DB->obtenerDatosProductosCount();
+        return $datos;
+    }
 }

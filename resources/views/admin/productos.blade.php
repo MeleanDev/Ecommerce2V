@@ -203,18 +203,18 @@
 
     //  Consultas EndPoint
     consulta = function(id) {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-        url: " {{route('producto.datoProducto')}}/" + id,
-        method: "GET",
-        success: function(Data) {
-            resolve(Data);
-        },
-        error: function(xhr, status, error) {
-            reject(error);
-        }
+        return new Promise((resolve, reject) => {
+            $.ajax({
+            url: " {{route('producto.datoProducto')}}/" + id,
+            method: "GET",
+            success: function(Data) {
+                resolve(Data);
+            },
+            error: function(xhr, status, error) {
+                reject(error);
+            }
+            });
         });
-    });
     };
 
     // Enviar datos
@@ -307,24 +307,30 @@
             datos = await consulta(id);
             $("#titulo").html("Ver Producto -> " + datos.nombre);
             $("#bg-titulo").attr("class","modal-header bg-info"); 
+            // asigancion de valores
             $("#preview").attr("src", datos.fotoUrl);
             $("#nombre").val(datos.nombre);
-            $("#nombre").attr("readonly", true);
             $("#codigo").val(datos.codigo);
-            $("#codigo").attr("readonly", true);
             $("#categoriaVer").val(datos.categoria);
-            $('#categoriaVer').attr('type', 'text');
             $("#descripcion").val(datos.descripcion);
-            $("#descripcion").attr("readonly", true);
             $("#cantidad").val(datos.cantidad);
-            $("#cantidad").attr("readonly", true);
             $("#precio").val(datos.precio);
+            $('#categoriaVer').attr('type', 'text');
+            // readoly true
+            $("#descripcion").attr("readonly", true);
+            $("#nombre").attr("readonly", true);
+            $("#codigo").attr("readonly", true);
+            $("#cantidad").attr("readonly", true);
             $("#precio").attr("readonly", true);
-            $('#nombremall').hide()
-            $('#descripcionmall').hide()
+            // ocultar botones y small
+            $('#categoria').hide()
+            $('#codigoSmall').hide() 
+            $('#nombreSmall').hide()
+            $('#descripcionSmall').hide()
+            $('#cantidadSmall').hide()
+            $('#precioSmall').hide()
             $('#foto').hide()
             $('#fotoTitle').hide()
-            $('#categoria').hide()
             $('#submit').hide()
             $('#modalCRUD').modal('show'); 
         } catch (error) {
@@ -332,28 +338,44 @@
         }
     };
 
-    // editar = async function(id){
-    //     try {
-    //         datos = await consulta(id);
-    //         rutaAccion = "{{route('producto.editar')}}/"+id;
-    //         $("#titulo").html("Editar Producto -> " + datos.nombre);
-    //         $("#bg-titulo").attr("class","modal-header bg-warning"); 
-    //         $("#preview").attr("src", datos.fotoUrl);
-    //         $("#nombre").val(datos.nombre);
-    //         $("#nombre").attr("readonly", false);
-    //         $("#descripcion").val(datos.descripcion);
-    //         $("#descripcion").attr("readonly", false);
-    //         $("#foto").attr("required", false);
-    //         $('#nombremall').show()
-    //         $('#descripcionmall').show()
-    //         $('#foto').show()
-    //         $('#fotoTitle').show()
-    //         $('#submit').show()
-    //         $('#modalCRUD').modal('show'); 
-    //     } catch (error) {
-    //         console.error("Error:", error);
-    //     }
-    // };
+    editar = async function(id){
+        try {
+            datos = await consulta(id);
+            rutaAccion = "{{route('producto.editar')}}/"+id;
+            $("#titulo").html("Editar Producto -> " + datos.nombre);
+            $("#bg-titulo").attr("class","modal-header bg-warning"); 
+            // Asignacion de valores
+            $("#precio").val(datos.precio);
+            $("#cantidad").val(datos.cantidad);
+            $("#descripcion").val(datos.descripcion);
+            $("#categoria").val(datos.categoria);
+            $('#categoria').trigger('change');
+            $("#codigo").val(datos.codigo);
+            $("#nombre").val(datos.nombre);
+            $("#preview").attr("src", datos.fotoUrl);
+            // readoly false
+            $("#codigo").attr("readonly", false);
+            $("#nombre").attr("readonly", false);
+            $("#descripcion").attr("readonly", false);
+            $("#cantidad").attr("readonly", false);
+            $("#precio").attr("readonly", false);
+            $("#foto").attr("required", false);
+            // mostrar botones y small
+            $('#categoriaVer').attr('type', 'hidden');
+            $('#categoria').show()
+            $('#codigoSmall').show() 
+            $('#nombreSmall').show()
+            $('#descripcionSmall').show()
+            $('#cantidadSmall').show()
+            $('#precioSmall').show()
+            $('#foto').show()
+            $('#fotoTitle').show()
+            $('#submit').show()
+            $('#modalCRUD').modal('show'); 
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
 
     eliminar = function(id){
         Swal.fire({

@@ -44,15 +44,15 @@
         <div class="row">
           <div class="col">
             <x-adminlte-small-box title="{{$suscritos}}" text="Suscritos" icon="fas fa-bullhorn text-dark"
-                theme="success" url="#" url-text="Ver SuscritosWeb"/>
+                theme="success" url="{{route('suscritoWeb')}}" url-text="Ver SuscritosWeb"/>
           </div>
           <div class="col order-12">
             <x-adminlte-small-box title="{{$categorias}}" text="Categorias" icon="fas fa-boxes text-dark"
-                theme="danger" url="#" url-text="Ver registro Categorias"/>
+                theme="danger" url="{{route('categoria')}}" url-text="Ver registro Categorias"/>
           </div>
           <div class="col order-1">
-            <x-adminlte-small-box title="N" text="Productos" icon="fas fa-archive text-dark"
-                theme="info" url="#" url-text="Ver registro Productos"/>
+            <x-adminlte-small-box title="{{$productos}}" text="Productos" icon="fas fa-archive text-dark"
+                theme="info" url="{{route('producto')}}" url-text="Ver registro Productos"/>
           </div>
         </div>
     </div>

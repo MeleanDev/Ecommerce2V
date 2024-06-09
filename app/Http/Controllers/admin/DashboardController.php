@@ -16,6 +16,7 @@ class DashboardController extends Controller
     public function index(){
         $suscritos = $this->dasboard->suscritosCount();
         $categorias = $this->dasboard->categoriaCount();
-        return view('dashboard', compact('suscritos', 'categorias'));
+        $productos = $this->dasboard->productosCount();
+        return view('dashboard', compact('suscritos', 'categorias', 'productos'));
     }
 }
