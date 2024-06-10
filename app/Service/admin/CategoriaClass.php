@@ -54,5 +54,10 @@ class CategoriaClass
     public function eliminarFotoCarpt($fotoNombre){
         $this->DB->eliminarFotoCarpt($fotoNombre);
     }
+
+    public function productosCategoria($nombre){
+        $categoria = $this->DB->categoriaMismaCount($nombre);
+        return $categoria;
+    }
     
 }

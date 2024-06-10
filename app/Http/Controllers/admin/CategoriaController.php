@@ -24,6 +24,8 @@ class CategoriaController extends Controller{
         $categorias = $this->categoria->datosCategoria();
         foreach ($categorias as $item) {
             $item->fotoUrl = asset($item->foto);
+            $valor = $this->categoria->productosCategoria($item->nombre);
+            $item->cantidad = $valor;
         }
         return datatables()->of($categorias)->toJson();
     }

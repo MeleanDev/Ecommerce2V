@@ -64,7 +64,7 @@
           </div>
           <div class="modal-body">
             <div class="text-center">
-                <img id="preview" src="" width="150" alt="Imagen previsualizada">
+                <img id="preview" src="" width="200" height="200" alt="Imagen previsualizada">
             </div>
             <div class="form-group">
                 <label for="foto" id="fotoTitle">Foto Producto || Solo Formato (JPG Y PNG)</label>
@@ -145,7 +145,7 @@
                     className: 'text-center',
                     render: function (data, type, row) {
                         if (row.fotoUrl) {
-                            return '<img src="' + row.fotoUrl + '" width="120" height="50" alt="Imagen del Producto">';
+                            return '<img src="' + row.fotoUrl + '" width="100" height="100" alt="Imagen del Producto">';
                         } else {
                             return '<span class="text-muted">Imagen no disponible</span>';
                         }
@@ -340,6 +340,7 @@
 
     editar = async function(id){
         try {
+            $("#formulario").trigger("reset");
             datos = await consulta(id);
             rutaAccion = "{{route('producto.editar')}}/"+id;
             $("#titulo").html("Editar Producto -> " + datos.nombre);

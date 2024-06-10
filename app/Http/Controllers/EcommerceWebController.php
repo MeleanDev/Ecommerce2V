@@ -17,7 +17,7 @@ class EcommerceWebController extends Controller{
         $empresaD = $this->ecommerce->DatosEmpresa();
         $fotos = $this->ecommerce->banners();
         $inicioInfo = $this->ecommerce->inicio();
-        $productos = $this->ecommerce->productos();
+        $productos = $this->ecommerce->productosUltimos();
         return view('Ecoommerce.inicio', compact('empresaD', 'fotos', 'inicioInfo', 'productos'));
     }
 
@@ -28,9 +28,19 @@ class EcommerceWebController extends Controller{
         return view('Ecoommerce.categoria', compact('empresaD', 'categorias', 'fotos'));
     }
 
-    public function productos(){
+    public function categoriasProductos($categoria){
         $empresaD = $this->ecommerce->DatosEmpresa();
-        return view('Ecoommerce.productos', compact('empresaD'));
+        $productos = $this->ecommerce->productos($categoria);
+        $fotos = $this->ecommerce->banners();
+        return view('Ecoommerce.productos', compact('empresaD', 'productos', 'fotos', 'categoria'));
+    }
+
+    public function productos($categoria, $producto){
+        $empresaD = $this->ecommerce->DatosEmpresa();
+        $producto = $this->ecommerce->productosUni($producto);
+        $fotos = $this->ecommerce->banners();
+        $CategoriaMisma = $this->ecommerce->CategoriaMisma($categoria);
+        return view('Ecoommerce.productoUnico', compact('empresaD', 'producto', 'fotos', 'CategoriaMisma'));
     }
 
     public function quienesSomos(){

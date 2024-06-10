@@ -31,9 +31,9 @@
                 <div class="row posts">
                 @foreach ($categorias as $item)
                     <div class="item new col-md-4">
-                        <a href="{{$item->nombre}}">
+                        <a href="{{route('categorias.productos', $item->nombre)}}">
                         <div class="featured-item">
-                            <img src="{{ asset($item->foto) }}" height="200" alt="{{$item->nombre}}">
+                            <img src="{{ asset($item->foto) }}" height="200" width="200" alt="{{$item->nombre}}">
                             <h4 class="h4 text-center">{{$item->nombre}}</h4>
                         </div>
                         </a>

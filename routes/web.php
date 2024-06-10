@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Route;
         Route::get('Quienes-Somos', 'quienesSomos')->name('quienesSomos');
         Route::get('Contacto', 'contacto')->name('contacto');
         Route::get('Categorias', 'categorias')->name('categorias');
-        Route::get('Productos', 'productos')->name('productos');
+        Route::get('Categorias/{categoria}', 'categoriasProductos')->name('categorias.productos');
+        Route::get('Categorias/{categoria}/{producto}', 'productos')->name('productoPublic');
         Route::post('suscripcion', 'SuscripcionWeb')->name('suscripcion');
     });
 

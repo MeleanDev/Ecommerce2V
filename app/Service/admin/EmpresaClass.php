@@ -36,7 +36,7 @@ class EmpresaClass{
 
             $extension = $datos->file('foto')->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $datos->fotofile('foto')->move(public_path('empresa'), $filename);
+            $datos->file('foto')->move(public_path('empresa'), $filename);
 
             $DListos[12] = 'empresa/'.$filename;
         }

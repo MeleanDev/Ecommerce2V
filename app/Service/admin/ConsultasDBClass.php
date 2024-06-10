@@ -53,8 +53,13 @@ class ConsultasDBClass{
             $categoria->nombre = $datos->input('nombre'); 
             $categoria->descripcion = $datos->input('descripcion');
             $categoria->foto = $foto;
-            $categoria->cantidad = 0;
             $categoria->save();
+        }
+
+        // Buscar el count en los productos que tengan la misma Categoria
+        public function categoriaMismaCount($categoria){ 
+            $datos = Producto::where('categoria', $categoria)->Count();   
+            return $datos;
         }
 
         // Obetener los datos paginada
@@ -98,6 +103,12 @@ class ConsultasDBClass{
         // Obetener los datos Count
         public function obtenerDatosProductosCount(){
             $datos = Producto::Count();
+            return $datos;
+        }
+
+        // Productos 
+        public function productosDatos(){
+            $datos = Producto::all();   
             return $datos;
         }
 
@@ -180,6 +191,29 @@ class ConsultasDBClass{
         public function obtenerDatosCategoriasPaginate(){
             $datos = Categoria::paginate(9);
             return $datos;
+        }   
+        
+    // Obetener los datos de las Categorias
+        public function productosCodigo($codigo){
+            $datos = Producto::where('codigo', $codigo)->first();   
+            return $datos;
+        }
+
+    // Productos
+        public function productosDatosUltimos(){
+            $ultimos = Producto::latest()->limit(9)->get();
+            return $ultimos;
+        }
+    
+    // Productos 
+        public function productosNombre($categoria){
+            $datos = Producto::where('categoria', $categoria)->paginate(10);   
+            return $datos;
+        }
+
+        public function categoriaMisma($categoria){ 
+            $datos = Producto::where('categoria', $categoria)->limit(10)->get();   
+            return $datos;
         }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -200,12 +234,6 @@ class ConsultasDBClass{
     // Infomracion Quienes Somos
         public function quienesSomosInformacion(){
             $datos = QuienesSomo::first();
-            return $datos;
-        }
-
-    // Productos 
-        public function productosDatos(){
-            $datos = Producto::all();   
             return $datos;
         }
 }

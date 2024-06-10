@@ -65,7 +65,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="text-center">
-                                <img id="preview" src="" width="300" alt="Imagen previsualizada">
+                                <img id="preview" src="" height="200" width="200" alt="Imagen previsualizada">
                             </div>
                             <div class="form-group">
                                 <label for="foto" id="fotoTitle">Foto Categoria || Solo Formato (JPG Y PNG)</label>
@@ -120,7 +120,7 @@
                     className: 'text-center',
                     render: function (data, type, row) {
                         if (row.fotoUrl) {
-                            return '<img src="' + row.fotoUrl + '" width="120" height="50" alt="Imagen de la categoría">';
+                            return '<img src="' + row.fotoUrl + '" width="100" height="100" alt="Imagen de la categoría">';
                         } else {
                             return '<span class="text-muted">Imagen no disponible</span>';
                         }
@@ -265,6 +265,7 @@
 
     ver = async function(id) {
         try {
+            $("#formulario").trigger("reset");
             datos = await consulta(id);
             $("#titulo").html("Ver Categoria -> " + datos.nombre);
             $("#bg-titulo").attr("class","modal-header bg-info"); 
@@ -287,6 +288,7 @@
 
     editar = async function(id){
         try {
+            $("#formulario").trigger("reset");
             datos = await consulta(id);
             rutaAccion = "{{route('categoria.editar')}}/"+id;
             $("#titulo").html("Editar Categoria -> " + datos.nombre);

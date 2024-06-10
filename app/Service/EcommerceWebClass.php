@@ -17,8 +17,30 @@ class EcommerceWebClass
         return $categoria;
     }
 
-    public function productos(){
-        $datos = $this->DB->productosDatos();
+    public function productos($categoria){
+        $datos = $this->DB->productosNombre($categoria);
+        foreach ($datos as $item) {
+            $item->fotoURL = asset($item->foto);
+        }
+        return $datos;
+    }
+
+    public function CategoriaMisma($categoria){
+        $datos = $this->DB->categoriaMisma($categoria);
+        foreach ($datos as $item) {
+            $item->fotoURL = asset($item->foto);
+        }
+        return $datos;
+    }
+
+    public function productosUni($producto){
+        $datos = $this->DB->productosCodigo($producto);
+        $datos->fotoURL = asset($datos->foto);
+        return $datos;
+    }
+
+    public function productosUltimos(){
+        $datos = $this->DB->productosDatosUltimos();
         return $datos;
     }
 
@@ -33,6 +55,9 @@ class EcommerceWebClass
 
     public function banners(){
         $fotos = $this->DB->bannerDatos();
+        $fotos->primaria = asset($fotos->primaria);
+        $fotos->secundaria = asset($fotos->secundaria);
+        $fotos->quienesSomos = asset($fotos->quienesSomos);
         return $fotos;
     }
 
