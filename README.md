@@ -1,7 +1,8 @@
 **No usar en temas empresarial, solamente para entorno de practica (desarrollo) si desea usar el codigo para tema empresarial o comercial cantacte al desarrollador Principal**
-<p align="center">![Logo](public/readme/logo.png)</p>
-<p align="center">![public](public/readme/public1.png)</p>
-<p align="center">![Panel Admin](public/readme/panelAdmin.png)</p>
+![logo](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/84aa88dc-31e0-4b21-8674-faf9ab000031)
+![panelAdmin](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/988f3e17-dffe-4f69-9b87-44c785d19638)
+![public1](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/c1ff6ee0-77f2-41e6-b98f-82a557df0e95)
+
 # WebSite con panel administrativo
 ## _Desarrollador MeleanDev 😎🧠_
 
