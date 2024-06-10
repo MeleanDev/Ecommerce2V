@@ -12,12 +12,12 @@
     <title>Ecommerce2V - @yield('tittle')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('build/Ecoommerce/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('estilos/Ecoommerce/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('build/Ecoommerce/assets/css/tooplate-main.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/Ecoommerce/assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('estilos/Ecoommerce/assets/css/tooplate-main.css') }}">
+    <link rel="stylesheet" href="{{ asset('estilos/Ecoommerce/assets/css/owl.css') }}">
 
     <style>
       .float{
@@ -73,13 +73,13 @@
     </a>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('build/Ecoommerce/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('build/Ecoommerce/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('estilos/Ecoommerce/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('estilos/Ecoommerce/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
     <!-- Additional Scripts -->
-    <script src="{{ asset('build/Ecoommerce/assets/js/custom.js') }}"></script>
-    <script src="{{ asset('build/Ecoommerce/assets/js/owl.js') }}"></script>
+    <script src="{{ asset('estilos/Ecoommerce/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('estilos/Ecoommerce/assets/js/owl.js') }}"></script>
 
 
     <script language = "text/Javascript"> 
