@@ -1,9 +1,9 @@
-**No usar en temas empresarial, solamente para entorno de practica (desarrollo) si desea usar el codigo para tema empresarial o comercial cantacte al desarrollador Principal**
-<br><br>
-![logo](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/84aa88dc-31e0-4b21-8674-faf9ab000031)<br>
 ![panelAdmin](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/988f3e17-dffe-4f69-9b87-44c785d19638)<br>
 ![public1](https://github.com/MeleanDev/Ecommerce2V/assets/154850053/c1ff6ee0-77f2-41e6-b98f-82a557df0e95)<br>
-
+![panel admin](https://img.shields.io/badge/PanelAdmin-blue)
+![Login](https://img.shields.io/badge/Login-008080)
+![Web](https://img.shields.io/badge/SitioWeb-800080)
+![Laravel](https://img.shields.io/badge/Laravel-800080)
 # WebSite con panel administrativo
 ## _Desarrollador MeleanDev 😎🧠_
 
