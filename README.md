@@ -11,24 +11,24 @@ Este proyecto esta hecho en laravel 11, espero que puedan practicar
 
 # Características del sistema
 ### _Rutas Publicas y privadas_
-- Publicas publicas:
-Inicio
-Productos -> Categorias
-Categoria ->Producto
-Quienes Somos?
-Contacto
+- Publicas publicas:<br>
+Inicio<br>
+Productos -> Categorias<br>
+Categoria ->Producto<br>
+Quienes Somos?<br>
+Contacto<br>
 Login
 
-- Rutas Privadas:
-Panel Principal
-Empresa
-SuscritosWeb -> desean recibir correo cuando hay productos nuevos
-Categorias - (Dentro de stock)
-Productos - (Dentro de stock)
-Inicio - (Dentro de EcommerceWeb)
-Banners - (Dentro de EcommerceWeb)
-Quienes Somos? - (Dentro de EcommerceWeb)
-Perfil (Edicion del perfil del usuario admin)
+- Rutas Privadas:<br>
+Panel Principal<br>
+Empresa<br>
+SuscritosWeb -> desean recibir correo cuando hay productos nuevos<br>
+Categorias - (Dentro de stock)<br>
+Productos - (Dentro de stock)<br>
+Inicio - (Dentro de EcommerceWeb)<br>
+Banners - (Dentro de EcommerceWeb)<br>
+Quienes Somos? - (Dentro de EcommerceWeb)<br>
+Perfil (Edicion del perfil del usuario admin)<br>
 
 ## Tecnologias
 
